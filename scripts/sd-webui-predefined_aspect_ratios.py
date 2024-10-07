@@ -1,6 +1,6 @@
-'''AUTOMATIC1111 extension sd-webui-predefined_aspect_ratios.
+'''Extension for AUTOMATIC1111 called sd-webui-predefined_aspect_ratios.
 
-Version 0.0.0.1
+Version 0.0.0.2
 '''
 # pylint: disable=invalid-name
 # pylint: disable=too-few-public-methods
@@ -54,16 +54,16 @@ class ARButton(ToolButton):
 class AspectRatioScript(scripts.Script):
     '''Class for selecting the aspect ratio.'''
     def __init__(self, ar=1.0, **kwargs):
-        self.ar_values_0 = (1.0, 2.0, 3/2, 4/3, 5/3, 5/4, 6/5,
-                                7/5, 14/9, 15/9, 16/9, 16/10)
-        self.ar_values_1 = (1.0, 0.5, 2/3, 3/4, 3/5, 4/5, 5/6,
-                                5/7, 9/14, 9/15, 9/16, 10/16)
-        self.ar_labels_0 = ("1:1", "2:1", "3:2", "4:3", "5:3",
-                            "5:4", "6:5", "7:5", "14:9", "15:9",
-                            "16:9", "16:10")
-        self.ar_labels_1 = ("1:1", "1:2", "2:3", "3:4", "3:5",
-                            "4:5", "5:6", "5:7", "9:14", "9:15",
-                            "9:16", "10:16")
+        self.ar_value_reset = (1.0)
+        self.ar_lable_reset = ("1:1")
+        self.ar_values_0 = (2.0, 3/2, 4/3, 5/3, 5/4, 6/5,
+                            7/5, 14/9, 15/9, 16/9, 16/10)
+        self.ar_values_1 = (0.5, 2/3, 3/4, 3/5, 4/5, 5/6,
+                            5/7, 9/14, 9/15, 9/16, 10/16)
+        self.ar_labels_0 = ("2:1", "3:2", "4:3", "5:3", "5:4", "6:5",
+                            "7:5", "14:9", "15:9", "16:9", "16:10")
+        self.ar_labels_1 = ("1:2", "2:3", "3:4", "3:5", "4:5", "5:6",
+                            "5:7", "9:14", "9:15", "9:16", "10:16")
     
     def title(self):
         '''Class method title.'''
@@ -79,11 +79,34 @@ class AspectRatioScript(scripts.Script):
         with gr.Column(
             elem_id=f'{"img" if is_img2img else "txt"}2img_container_aspect_ratio'
         ):
-            # Loop over the row.
+            # Loop over the row 0.
             with gr.Row(
                 elem_id=f'{"img" if is_img2img else "txt"}2img_row_aspect_ratio'
             ):
                 # Aspect ratio buttons line 0.
+                btns = [
+                    ARButton(ar=ar, value=label)
+                    for ar, label in zip(
+                        self.ar_value_reset,
+                        self.ar_label_reset
+                    )
+                ]
+                with contextlib.suppress(AttributeError):
+                    for b in btns:
+                        if is_img2img:
+                            resolution = [self.i2i_w, self.i2i_h]
+                        else:
+                            resolution = [self.t2i_w, self.t2i_h]
+                        b.click(
+                            b.apply,
+                            inputs=resolution,
+                            outputs=resolution
+                        )
+            # Loop over the row 1.
+            with gr.Row(
+                elem_id=f'{"img" if is_img2img else "txt"}2img_row_aspect_ratio'
+            ):
+                # Aspect ratio buttons line 1.
                 btns = [
                     ARButton(ar=ar, value=label)
                     for ar, label in zip(
@@ -102,11 +125,11 @@ class AspectRatioScript(scripts.Script):
                             inputs=resolution,
                             outputs=resolution
                         )
-            # Loop over the row.
+            # Loop over the row 2.
             with gr.Row(
                 elem_id=f'{"img" if is_img2img else "txt"}2img_row_aspect_ratio'
             ):
-                # Aspect ratio buttons line 1.
+                # Aspect ratio buttons line 2.
                 btns = [
                     ARButton(ar=ar, value=label)
                     for ar, label in zip(
