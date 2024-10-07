@@ -1,4 +1,11 @@
 # pylint: disable=invalid-name
+# pylint: disable=too-few-public-methods
+# pylint: disable=attribute-defined-outside-init
+# pylint: disable=missing-class-docstring
+# pylint: disable=missing-module-docstring
+# pylint: disable=missing-function-docstring
+# pylint: disable=import-error
+# pylint: disable=consider-using-from-import
 
 import contextlib
 import gradio as gr
