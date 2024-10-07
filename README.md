@@ -66,7 +66,9 @@ Following aspect ratios are implemented:
 
 ## What the Extension Does
 
-to-do ...
+After installation one will find a button panel within the web UI.
+
+<a target="_blank" href=""><img src="button_panel.png" alt="button panel"></a>
 
 ## Known Problems
 
