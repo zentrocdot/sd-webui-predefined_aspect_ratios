@@ -24,7 +24,9 @@
 
 **Orientation Landscape**
 
-* 2:1 → 1024 x 512 pixel → (Factor 2) 
+* 2:1 → 1024 x 512 pixel → (Factor 2)
+  
+* 3:1 → 1536 x 512 pixel → (Factor 3)
 
 * 3:2 → 768 x 512 pixel → (Factor 1.5)
 
@@ -48,7 +50,9 @@
 
 **Orientation Portrait**
 
-* 1:2 → 512 x 1024 pixel → (Factor 0.5) 
+* 1:2 → 512 x 1024 pixel → (Factor 0.5)
+
+* 1:3 → 512 x 1536 pixel → (Factor 0,333333333)
 
 * 2:3 → 512 x 768 pixel → (Factor 0,666666667)
 
