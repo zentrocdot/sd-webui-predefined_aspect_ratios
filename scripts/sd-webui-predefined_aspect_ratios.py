@@ -48,7 +48,6 @@ class AspectRatioScript(scripts.Script):
                     elem_id="arc_empty_space",
                 )
                 self.aspect_ratios = [1.0, 3/2, 4/3, 16/9]
-                ]
                 self.aspect_ratio_labels = ["1:1", "3:2", "4:3", "16:9"]
                 # Aspect ratio buttons.
                 btns = [
