@@ -28,8 +28,10 @@ class ARButton(ToolButton):
         super().__init__(**kwargs)
         self.ar = ar
 
-    def apply(self, w, h):
-        '''Class method apply.'''
+    def apply(self, **kwargs):
+        '''Class method apply.
+           **kwargs can be exchanged later on by h, w
+        '''
         # Initialise height and width.
         w = 512
         h = 512
@@ -46,21 +48,17 @@ class ARButton(ToolButton):
         # Return the list with width and height.
         return retlst
 
-    def reset(self, w, h):
-        '''Class method reset.'''
-        return [self.res, self.res]
-
 # Define class AspectRatioScript.
 class AspectRatioScript(scripts.Script):
     '''Class for selecting the aspect ratio.'''
     def __init__(self, ar=1.0, **kwargs):
-        self.ar_values_0 = (2.0, 3/2, 4/3, 5/3, 5/4, 6/5,
+        self.ar_values_0 = (2/1, 3/1, 3/2, 4/3, 5/3, 5/4, 6/5,
                             7/5, 14/9, 15/9, 16/9, 16/10)
-        self.ar_labels_0 = ("2:1", "3:2", "4:3", "5:3", "5:4", "6:5",
+        self.ar_labels_0 = ("2:1", "3:1", "3:2", "4:3", "5:3", "5:4", "6:5",
                             "7:5", "14:9", "15:9", "16:9", "16:10")
-        self.ar_values_1 = (0.5, 2/3, 3/4, 3/5, 4/5, 5/6,
+        self.ar_values_1 = (0.5, 1/3, 2/3, 3/4, 3/5, 4/5, 5/6,
                             5/7, 9/14, 9/15, 9/16, 10/16)
-        self.ar_labels_1 = ("1:2", "2:3", "3:4", "3:5", "4:5", "5:6",
+        self.ar_labels_1 = ("1:2", "1:3", "2:3", "3:4", "3:5", "4:5", "5:6",
                             "5:7", "9:14", "9:15", "9:16", "10:16")
     
     def title(self):
