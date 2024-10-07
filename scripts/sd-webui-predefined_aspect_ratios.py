@@ -39,10 +39,6 @@ class AspectRatioScript(scripts.Script):
             with gr.Row(
                 elem_id=f'{"img" if is_img2img else "txt"}2img_row_aspect_ratio'
             ):
-                #gr.HTML(
-                #    visible=True,
-                #    elem_id="arc_empty_space"
-                #)
                 # Aspect ratio buttons.
                 btns = [
                     ARButton(ar=ar, value=label)
