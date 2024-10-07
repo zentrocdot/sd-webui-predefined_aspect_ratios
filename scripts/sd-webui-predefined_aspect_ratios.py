@@ -38,8 +38,7 @@ class ARButton(ToolButton):
             w, h = min_dim, min_dim
         # Create a new list.    
         retlst = list(map(round, [w, h]))
-        # Return the calculated values for width and heigt.    
-        #return list(map(round, [w, h]))
+        # Return the list with width and height.    
         return retlst
 
     def reset(self, w, h):
@@ -50,12 +49,16 @@ class ARButton(ToolButton):
 class AspectRatioScript(scripts.Script):
     '''Class for selecting the aspect ratio.'''
     def __init__(self, ar=1.0, **kwargs):
-        self.aspect_ratios_0 = (1.0, 2.0, 3/2, 4/3, 5/3, 5/4, 6/5, 7/5, 14/9, 15/9, 16/9, 16/10) 
-        self.aspect_ratios_1 = (1.0, 0.5, 2/3, 3/4, 3/5, 4/5, 5/6, 5/7, 9/14, 9/15, 9/16, 10/16)
-        self.aspect_ratios_labels_0 = ("1:1", "2:1", "3:2", "4:3", "5:3", "5:4", "6:5", 
-                                       "7:5", "14:9", "15:9", "16:9", "16:10")
-        self.aspect_ratios_labels_1 = ("1:1", "1:2", "2:3", "3:4", "3:5", "4:5", "5:6",
-                                       "5:7", "9:14", "9:15", "9:16", "10:16") 
+        self.ar_values_0 = (1.0, 2.0, 3/2, 4/3, 5/3, 5/4, 6/5, 
+                                7/5, 14/9, 15/9, 16/9, 16/10) 
+        self.ar_values_1 = (1.0, 0.5, 2/3, 3/4, 3/5, 4/5, 5/6,
+                                5/7, 9/14, 9/15, 9/16, 10/16)
+        self.ar_labels_0 = ("1:1", "2:1", "3:2", "4:3", "5:3",
+                            "5:4", "6:5", "7:5", "14:9", "15:9",
+                            "16:9", "16:10")
+        self.ar_labels_1 = ("1:1", "1:2", "2:3", "3:4", "3:5",
+                            "4:5", "5:6", "5:7", "9:14", "9:15",
+                            "9:16", "10:16")
         
     def title(self):
         '''Class method title.'''
@@ -67,13 +70,11 @@ class AspectRatioScript(scripts.Script):
 
     def ui(self, is_img2img):
         '''Class method ui.'''
-        #self.aspect_ratios_0 = (1.0, 2.0, 3/2, 4/3, 5/3, 5/4, 6/5, 7/5, 14/9, 15/9, 16/9, 16/10) 
-        #self.aspect_ratios_1 = (1.0, 0.5, 2/3, 3/4, 3/5, 4/5, 5/6, 5/7, 9/14, 9/15, 9/16, 10/16)
-        #self.aspect_ratios_labels_0 = ("1:1", "2:1", "3:2", "4:3", "5:3", "5:4", "6:5", "7:5", "14:9", "15:9", "16:9", "16:10")
-        #self.aspect_ratios_labels_1 = ("1:1", "1:2", "2:3", "3:4", "3:5", "4:5", "5:6", "5:7", "9:14", "9:15", "9:16", "10:16")
+        # Loop over the columns.
         with gr.Column(
             elem_id=f'{"img" if is_img2img else "txt"}2img_container_aspect_ratio'
         ):
+            # Loop over the row. 
             with gr.Row(
                 elem_id=f'{"img" if is_img2img else "txt"}2img_row_aspect_ratio'
             ):
@@ -81,8 +82,8 @@ class AspectRatioScript(scripts.Script):
                 btns = [
                     ARButton(ar=ar, value=label)
                     for ar, label in zip(
-                        self.aspect_ratios_0,
-                        self.aspect_ratios_labels_0
+                        self.ar_values_0,
+                        self.ar_labels_0
                     )
                 ]
                 with contextlib.suppress(AttributeError):
@@ -96,6 +97,7 @@ class AspectRatioScript(scripts.Script):
                             inputs=resolution,
                             outputs=resolution
                         )
+            # Loop over the row.            
             with gr.Row(
                 elem_id=f'{"img" if is_img2img else "txt"}2img_row_aspect_ratio'
             ):
@@ -103,8 +105,8 @@ class AspectRatioScript(scripts.Script):
                 btns = [
                     ARButton(ar=ar, value=label)
                     for ar, label in zip(
-                        self.aspect_ratios_1,
-                        self.aspect_ratios_labels_1
+                        self.ar_values_1,
+                        self.ar_labels_1
                     )
                 ]
                 with contextlib.suppress(AttributeError):
@@ -119,8 +121,9 @@ class AspectRatioScript(scripts.Script):
                             outputs=resolution
                         )
             
-    # User defined function after_component()
+    # User defined method after_component.
     def after_component(self, component, **kwargs):
+        '''Class method after_component.'''
         if kwargs.get("elem_id") == "txt2img_width":
             self.t2i_w = component
         if kwargs.get("elem_id") == "txt2img_height":
