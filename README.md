@@ -4,7 +4,7 @@
 
 ## Preface
 
-<p align="justify">The existing solutions [3,4,5] are to complex for my personal needs. This is a version with just buttons of a predefined set of aspect ratios. They cover the most common aspect ratios used.</p>
+<p align="justify">The existing solutions [3,4,5] were much to complex for my personal needs. I have therefore decided to use this case to programme an <i>Extension</i> for learning purposes. The result of my first efforts can be found here. The presented version does nothing else, than adding a panel with predefined aspect ratios to the web UI. The predefined aspect ratios cover the most common aspect ratios used.</p>
 
 ## Selector Buttons for Predefined Aspect Ratios
 
