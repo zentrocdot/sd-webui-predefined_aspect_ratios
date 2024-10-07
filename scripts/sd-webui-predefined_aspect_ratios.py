@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 '''Extension for AUTOMATIC1111 called sd-webui-predefined_aspect_ratios.
 
 Version 0.0.0.4
@@ -21,7 +22,7 @@ from modules.ui_components import ToolButton
 # Define class ARButton.
 class ARButton(ToolButton):
     '''Class for calculating the new Width and new Height for
-       use in the web UI from the chosen aspect ratio.
+       use in the web UI from the chosen Aspect Ratio.
     '''
     def __init__(self, ar=1.0, **kwargs):
         '''Class init method.'''
@@ -30,7 +31,7 @@ class ARButton(ToolButton):
 
     def apply(self, w, h):
         '''Class method apply.
-           w, h are not in use yet
+           w, h are not in use yet.
         '''
         # Initialise height and width.
         w = 512
