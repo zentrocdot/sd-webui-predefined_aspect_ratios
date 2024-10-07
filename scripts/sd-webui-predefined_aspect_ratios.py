@@ -54,14 +54,12 @@ class ARButton(ToolButton):
 class AspectRatioScript(scripts.Script):
     '''Class for selecting the aspect ratio.'''
     def __init__(self, ar=1.0, **kwargs):
-        #self.ar_value_reset = (1.0)
-        #self.ar_label_reset = ("1:1")
         self.ar_values_0 = (2.0, 3/2, 4/3, 5/3, 5/4, 6/5,
                             7/5, 14/9, 15/9, 16/9, 16/10)
-        self.ar_values_1 = (0.5, 2/3, 3/4, 3/5, 4/5, 5/6,
-                            5/7, 9/14, 9/15, 9/16, 10/16)
         self.ar_labels_0 = ("2:1", "3:2", "4:3", "5:3", "5:4", "6:5",
                             "7:5", "14:9", "15:9", "16:9", "16:10")
+        self.ar_values_1 = (0.5, 2/3, 3/4, 3/5, 4/5, 5/6,
+                            5/7, 9/14, 9/15, 9/16, 10/16)
         self.ar_labels_1 = ("1:2", "2:3", "3:4", "3:5", "4:5", "5:6",
                             "5:7", "9:14", "9:15", "9:16", "10:16")
     
