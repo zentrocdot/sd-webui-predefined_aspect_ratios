@@ -64,6 +64,10 @@ Following aspect ratios are implemented:
 
 * 10:16 → 512 x 1024 pixel → (Factor 0.625)
 
+## To-Do
+
+The aspect ratio of 1:1 is in parallel the base resolution or if 1:1 is clicked it is like a reset of the resolutions. So I will decouple this button in the next version from first and second line.
+
 # References
 
 [1] https://github.com/AUTOMATIC1111/stable-diffusion-webui
