@@ -1,5 +1,9 @@
-# sd-webui-predefined_aspect_ratios
+# Extension for the AUTOMATIC1111 Web UI
 
-AUTOMATIC1111 predefined aspect ratios buttons
+Extension for [AUTOMATIC1111/stable-diffusion-webui](https://github.com/AUTOMATIC1111/stable-diffusion-webui) adding buttons for selcting predefined aspect ratios.
 
-Extension for [AUTOMATIC1111/stable-diffusion-webui](https://github.com/AUTOMATIC1111/stable-diffusion-webui) adding image aspect ratio selector buttons.
+## Selector Buttons for Predefined Aspect Ratios
+
+
+
+
