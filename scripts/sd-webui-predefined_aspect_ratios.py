@@ -18,17 +18,14 @@ get_image_dimensions_symbol = "\U0001F5BC" # 获取图片尺寸符号
 class ResButton(ToolButton):
     def __init__(self, res=(512, 512), **kwargs):
         super().__init__(**kwargs)
-
         self.w, self.h = res
 
     def reset(self):
         return [self.w, self.h]
 
-
 class ARButton(ToolButton):
     def __init__(self, ar=1.0, **kwargs):
         super().__init__(**kwargs)
-
         self.ar = ar
 
     def apply(self, w, h): # 是一个类方法，接受两个参数w和h，表示宽度和高度。根据self.ar的值，函数会根据不同的条件对宽度和高度进行调整。
@@ -41,36 +38,28 @@ class ARButton(ToolButton):
         else:  # set minimum dimension to both 设置两个值的最小尺寸。函数会找到w和h中的最小值，然后将w和h都设置为该最小值。
             min_dim = min([w, h])
             w, h = min_dim, min_dim
-
         return list(map(round, [w, h])) # 函数会将调整后的宽度和高度都四舍五入到最接近的整数，并以列表的形式返回。
 
     def reset(self, w, h): # 用于更新UI界面上的宽高数值滑块。是一个类方法，接受两个参数w和h。它返回一个列表，列表中包含两个元素，这两个元素都是self.res的值。
         return [self.res, self.res]
 
-
 def parse_aspect_ratios_file(filename): # 该函数用于解析预设的宽高比例文件。
     labels, values, comments = [], [], [] # 定义三个空列表：labels、values和comments。这些列表将用于存储标签、值和注释。
     file = Path(aspect_ratios_dir, filename)
-
     # 首先，函数会检查文件是否存在，如果不存在则返回三个空列表。
     if not file.exists():
         return labels, values, comments # 返回三个空列表：显示的标签，值，注解
-    
     # 如果文件存在，函数会打开文件并读取所有行。
     with open(file, "r", encoding="utf-8") as f:
         lines = f.readlines()
-
     if not lines:
         return labels, values, comments # 返回三个空列表：显示的标签、值和注解。
-    
     # 排除以 "#" 开头的注释行和不包含逗号的行。
     for line in lines:
         if line.startswith("#"): # 如果行以#开头，则使用continue语句跳过该行；
             continue
-
         if ',' not in line: # 如果行不包含逗号，则同样使用continue语句跳过该行。
             continue
-
         # 对于每行，函数会尝试将其拆分为标签和值，并将注解保存在变量 comment 中。
         try:
             label, value = line.strip().split(",")
@@ -85,7 +74,6 @@ def parse_aspect_ratios_file(filename): # 该函数用于解析预设的宽高�
         labels.append(label)
         values.append(eval(value))
         comments.append(comment)
-
     return labels, values, comments # 返回三个列表：显示的标签、值和注解。
 
 
@@ -94,23 +82,17 @@ def parse_resolutions_file(filename, resolution_type):
     labels, values, comments = [], [], [] # 定义三个空列表：labels、values和comments。这些列表将用于存储标签、值和注释。
     #file = Path(aspect_ratios_dir, filename)
     file = Path(aspect_ratios_dir, resolution_type + "_resolutions.txt")
-
     if not file.exists():
         return labels, values, comments # 函数首先检查文件是否存在，如果不存在则返回空的labels、values和comments列表。
-
     with open(file, "r", encoding="utf-8") as f: # 然后，函数打开文件并逐行读取文件内容。
         lines = f.readlines()
-
     if not lines:
         return labels, values, comments # 如果文件为空，则返回空的labels、values和comments列表。
-
     for line in lines:
         if line.startswith("#"): # 对于每一行，函数首先检查是否以"#"开头，如果是则跳过该行。
             continue
-
         if '*' not in line: # 然后，函数检查该行是否包含*号，如果不包含则跳过该行。
             continue
-
         try:
             comment = ""  # 在这里定义comment为空字符串
             width, height = line.strip().split("*")  # 尝试将该行按照井号分割为宽高两个部分：width, height。
@@ -121,20 +103,15 @@ def parse_resolutions_file(filename, resolution_type):
                 height, comment = height.split("#")
         #    label, comment = line.strip().split("#")  # 尝试将该行按照井号分割为两个部分：label和comment。
         #    width, height = label.strip().split("*")  # 然后，将label按照星号分割为两个部分：width和height。
-
         except ValueError:
             print(f"skipping badly formatted line in resolutions file: {line}") # 如果分割失败，则打印错误信息并跳过该行。跳过格式错误的分辨率文件行
             continue
-
         resolution = (width, height) # 如果分割成功，则将label添加到labels列表中，将resolution添加到values列表中，将comment添加到comments列表中。
-
         # label = f"{width}x{height}"
         label = add_ratio(width, height)
-
         labels.append(label)
         values.append(resolution)
         comments.append(comment)
-
     return labels, values, comments # 最后，函数返回包含解析结果的元组。
 
 
@@ -153,7 +130,6 @@ def write_aspect_ratios_file(filename): # 该函数的功能是将多个宽高�
     ]
     with open(filename, "w", encoding="utf-8") as f: # 使用with open语句打开指定的文件，并以utf-8编码写入aspect_ratios列表中的内容。
         f.writelines(aspect_ratios) # 最后，使用f.writelines(aspect_ratios)将列表中的内容写入文件中。
-
 
 def write_resolutions_file(filename, resolution_type): # 该函数的功能是将一个包含多个分辨率的列表写入到指定的文件中。
     # 定义一个名为resolutions的列表，其中包含了多个字符串元素。每个字符串代表一种图像分辨率配置，
@@ -179,35 +155,6 @@ def write_resolutions_file(filename, resolution_type): # 该函数的功能是�
             "1920*1080",
             "1080*1920",
         ]
-    elif resolution_type == "SDXL":
-        resolutions = [
-            # ... SDXL分辨率的列表 ...
-            "#1024*1024 # 1:1 square SDXL方形。这一行是格式示例，以下列表不建议修改，推荐修改使用自定义分辨率的文件",
-            "704*1408",
-            "704*1344",
-            "768*1344",
-            "768*1280",
-            "832*1216",
-            "832*1152",
-            "896*1152",
-            "896*1088",
-            "960*1088",
-            "960*1024",
-            "1024*960",
-            "1088*960",
-            "1088*896",
-            "1152*896",
-            "1152*832",
-            "1216*832",
-            "1280*768",
-            "1344*768",
-            "1344*704",
-            "1408*704",
-            "1472*704",
-            "1536*640",
-            "1600*640",
-            "1664*576", 
-            ]
     else:
         raise ValueError("Unsupported resolution type")
         
@@ -217,7 +164,6 @@ def write_resolutions_file(filename, resolution_type): # 该函数的功能是�
             f.write("%s\n" % res)
     #with open(filename, "w", encoding="utf-8") as f: # 使用with open语句打开指定的文件，并以utf-8编码写入resolutions列表中的内容。
         #f.writelines(resolutions) #调用文件对象f的writelines()方法，将resolutions列表中的所有字符串依次写入到已打开的文件中。
-
 
 def write_js_titles_file(button_titles):
     filename = Path(aspect_ratios_dir, "javascript", "button_titles.js")
@@ -232,7 +178,6 @@ def write_js_titles_file(button_titles):
         )
         counter = counter + 1
     content.append("}")
-
     with open(filename, "w", encoding="utf-8") as f:
         f.writelines(content)
 
@@ -257,24 +202,18 @@ def add_ratio(width, height):
 
 def get_reduced_ratio(n, d): # 该函数的功能是根据给定的两个整数n和d，计算并返回一个缩放比例。用在尺寸计算器显示比例
     n, d = list(map(int, (n, d))) # 首先，将n和d转换为整数类型。
-
     if n == d:
         return "1:1"
-
     if n < d:
         div = gcd(d, n) # 计算n和d的最大公约数，并将其赋值给变量div。
     else:
         div = gcd(n, d) # 如果n大于等于d，则计算d和n的最大公约数，并将其赋值给变量div。
-
     w = int(n) // div # w是n除以div的整数商
     h = int(d) // div # h是d除以div的整数商。
-
     if w == 8 and h == 5: # 如果w等于8且h等于5，则将w的值修改为16，h的值修改为10。
         w = 16
         h = 10
-
     return f"{w}:{h}" # 最后，将w和h的值以字符串的形式返回，格式为"w:h"。
-
 
 def solve_aspect_ratio(w, h, n, d): # 用于计算缩放后的宽高比数值
     # 根据输入的参数，如果宽度不为0且不为None，则返回宽度除以(n / d)的值，四舍五入到最接近的整数。
@@ -287,38 +226,26 @@ def solve_aspect_ratio(w, h, n, d): # 用于计算缩放后的宽高比数值
     else:
         return 0
 
-
 class AspectRatioScript(scripts.Script): # 定义这个插件脚本的类
     def read_aspect_ratios(self):
         ar_file = Path(aspect_ratios_dir, "aspect_ratios.txt") # 读取一个名为"aspect_ratios.txt"的比例文件
-
         if not ar_file.exists():
             write_aspect_ratios_file(ar_file) # 如果文件不存在，则会调用write_aspect_ratios_file函数创建该文件。
-
         (
             self.aspect_ratio_labels,
             aspect_ratios,
             self.aspect_ratio_comments,
         ) = parse_aspect_ratios_file("aspect_ratios.txt") # 调用 parse_aspect_ratios_file 函数将其解析为三个变量：self.aspect_ratio_labels、aspect_ratios和self.aspect_ratio_comments。
-
         self.aspect_ratios = list(map(float, aspect_ratios)) # 将aspect_ratios列表中的每个元素转换为浮点数
-
         #待办事项：
-
         # TODO: check for duplicates 检查重复值
-
         # TODO: check for invalid values 检查无效值
-
         # TODO: use comments as tooltips 鼠标悬浮提示
-
-        # see https://github.com/alemelis/sd-webui-ar/issues/5
 
     def read_resolutions(self, resolution_type):
         res_file = Path(aspect_ratios_dir, f"{resolution_type}_resolutions.txt") # # 根据 resolution_type 读取对应的分辨率文件，并将其解析为三个变量：res_labels、res和res_comments
-
         if not res_file.exists():
             write_resolutions_file(res_file, resolution_type) # 如果文件不存在，则会调用 write_resolutions_file 函数创建该文件。
-
         self.res_labels, res, self.res_comments = parse_resolutions_file( # 调用 parse_resolutions_file 函数将其解析为三个变量：res_labels、res和res_comments
             f"{resolution_type}_resolutions.txt", resolution_type
         )
@@ -331,7 +258,7 @@ class AspectRatioScript(scripts.Script): # 定义这个插件脚本的类
         return scripts.AlwaysVisible
 
     def ui(self, is_img2img):
-        with gr.Accordion(open=True, label=self.title()): #可折叠面板，用于显示插件脚本的标题，折叠默认打开
+        with gr.Accordion(open=True, label=self.title()): # Collapsible panel for displaying the title of the plugin script, collapsing is turned on by default
 
             with gr.Column(
                 elem_id=f'{"img" if is_img2img else "txt"}2img_container_aspect_ratio'
@@ -611,42 +538,6 @@ class AspectRatioScript(scripts.Script): # 定义这个插件脚本的类
                                     inputs=[arc_desired_width, arc_desired_height],
                                     outputs=resolution,
                                 )
-
-                    # 移除按钮的定义
-                    # Show calculator pane (and reset number input values)  显示计算器面板（以及重置数字输入值），点击事件
-                    # arc_show_calculator.click(
-                        # lambda: [
-                            # gr.update(visible=True),
-                            # gr.update(visible=False),
-                            # gr.update(visible=True),
-                            # gr.update(value=512),
-                            # gr.update(value=512),
-                            # gr.update(value=0),
-                            # gr.update(value=0),
-                            # gr.update(value="Aspect Ratio: **1:1**"),
-                        # ],
-                        # None,
-                        # [
-                            # arc_panel,
-                            # arc_show_calculator,
-                            # arc_hide_calculator,
-                            # arc_width1,
-                            # arc_height1,
-                            # arc_desired_width,
-                            # arc_desired_height,
-                            # arc_ar_display,
-                        # ],
-                    # )
-                    # Hide calculator pane 隐藏计算器面板
-                    # arc_hide_calculator.click(
-                        # lambda: [
-                            # gr.update(visible=False),
-                            # gr.update(visible=True),
-                            # gr.update(visible=False),
-                        # ],
-                        # None,
-                        # [arc_panel, arc_show_calculator, arc_hide_calculator],
-                    # )
 
     # Function after_component()
     def after_component(self, component, **kwargs):
