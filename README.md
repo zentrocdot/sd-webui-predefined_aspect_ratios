@@ -1,6 +1,6 @@
 # Extension for the AUTOMATIC1111 Web UI
 
-<p align="justify">Extension for the github.com/AUTOMATIC1111/stable-diffusion-webui, which is adding buttons for the selection of predefined aspect ratios from within the web UI.</p>
+<p align="justify">Extension for the <a href="[url](https://github.com/AUTOMATIC1111/stable-diffusion-webui)">AUTOMATIC1111/stable-diffusion-webui</a>, which is adding buttons for the selection of predefined aspect ratios from within the web UI.</p>
 
 ## Preface
 
