@@ -6,8 +6,6 @@
 }
 
 #txt2img_row_aspect_ratio,
-#txt2img_row_resolutions,
-#img2img_row_aspect_ratio,
-#img2img_row_resolutions {
+#img2img_row_aspect_ratio {
 	gap: 8px;
 }
