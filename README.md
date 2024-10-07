@@ -82,7 +82,7 @@ After installation of the Extension it could be that the web UI has to be reload
 
 ## Related Tools
 
-<p align="justify">I wrote some tools for dealing with aspect ratios. They can be find at 
+<p align="justify">I wrote some tools for dealing with aspect ratios. These tool can be find at 
   <a href="https://github.com/zentrocdot/artificial-intelligence-tools/tree/main/misc">Aspect Ratio Tools</a>.
 </p>
 
