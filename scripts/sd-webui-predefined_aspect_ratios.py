@@ -77,7 +77,7 @@ class AspectRatioScript(scripts.Script):
                     elem_id="arc_empty_space",
                 )
                 # Aspect Ratio buttons
-                aspect_ratios = [
+                self.aspect_ratios = [
                    "1:1, 1.0 # 1:1 ratio based on minimum dimension\n",
                    "3:2, 3/2 # Set width based on 3:2 ratio to height\n",
                    "4:3, 4/3 # Set width based on 4:3 ratio to height\n",
@@ -86,7 +86,7 @@ class AspectRatioScript(scripts.Script):
                 btns = [
                     ARButton(ar=ar, value=label)
                     for ar, label in zip(
-                        aspect_ratios,
+                        self.aspect_ratios,
                         self.aspect_ratio_labels,
                     )
                 ]
