@@ -18,45 +18,45 @@ Orientation Landscape
 
 * 4:3 → 683 x 512 pixel → (Factor 1.33)
 
-* 5:3 → 960 x 576 pixel → (Factor 1.67) 
+* 5:3 → 853 x 512 pixel → (Factor 1.67) 
 
 * 5:4 → 640 x 512 pixel → (Factor 1.25) 
 
-* 6:5 → 768 x 640 pixel → (Factor 1.2) 
+* 6:5 → 614 x 512 pixel → (Factor 1.2) 
 
-* 7:5 → 896 x 640 pixel → (Factor 1.4) 
+* 7:5 → 717 x 512 pixel → (Factor 1.4) 
 
-* 14:9 → 896 x 576 pixel → (Factor 1.56) 
+* 14:9 → 796 x 512 pixel → (Factor 1.56) 
 
-* 15:9 → 960 x 576 pixel → (Factor 1.56) 
+* 15:9 → 853 x 512 pixel → (Factor 1.66) 
 
-* 16:9 → 1024 x 576 pixel → (Factor 1.78)
+* 16:9 → 910 x 512 pixel → (Factor 1.78)
 
-* 16:10 → 1024 x 640 pixel → (Factor 1.6) 
+* 16:10 → 819 x 640 pixel → (Factor 1.6) 
 
 ### Orientation Portrait
 
 * 1:2 → 512 x 1024 pixel → (Factor 0.5) 
 
-* 2:3 → 512 x 768 pixel → (Factor 0.67)
+* 2:3 → 512 x 768 pixel → (Factor 0,666666667)
 
-* 3:4 → 512 x 683 pixel → (Factor 0.75)
+* 3:4 → 512 x 683 pixel → (Factor 0,749633968)
 
-* 3:5 → 576 x 960 pixel → (Factor 0.6) 
+* 3:5 → 512 x 853 pixel → (Factor 0,600234467) 
 
 * 4:5 → 512 x 640 pixel → (Factor 0.8) 
 
-* 5:6 → 640 x 768 pixel → (Factor 0.834) 
+* 5:6 → 512 x 614 pixel → (Factor 0.833333333) 
 
-* 5:7 → 640 x 896 pixel → (Factor 0.714285714) 
+* 5:7 → 512 x 717 pixel → (Factor 0,714086471) 
 
-* 9:14 → 576 x 896 pixel → (Factor 0.642857143)
+* 9:14 → 512 x 796 pixel → (Factor 0.642857143)
 
-* 9:15 → 576 x 960 pixel → (Factor 1.56)
+* 9:15 → 512 x 910 pixel → (Factor 0.6)
 
-* 9:16 → 576 x 1024 pixel → (Factor 0.5625)
+* 9:16 → 512 x 819 pixel → (Factor 0.5625)
 
-* 10:16 → 640 x 1024 pixel → (Factor 0.625)
+* 10:16 → 512 x 1024 pixel → (Factor 0.625)
 
 # References
 [1] https://github.com/AUTOMATIC1111/stable-diffusion-webui
