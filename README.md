@@ -59,7 +59,9 @@ Orientation Landscape
 * 10:16 → 512 x 1024 pixel → (Factor 0.625)
 
 # References
+
 [1] https://github.com/AUTOMATIC1111/stable-diffusion-webui
+
 [2] https://buymeacoffee.com/zentrocdot/stable-diffusion-aspect-ratios
 
 
