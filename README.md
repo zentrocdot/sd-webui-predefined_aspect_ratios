@@ -18,7 +18,7 @@
 
 <p align="justify">Following aspect ratios are implemented:</p>
 
-**No specific Orientation**
+**No specific (square) Orientation**
 
 * 1:1 → 512 x 512 pixel
 
