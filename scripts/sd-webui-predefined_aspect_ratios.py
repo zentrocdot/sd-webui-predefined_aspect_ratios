@@ -28,7 +28,7 @@ class ARButton(ToolButton):
         super().__init__(**kwargs)
         self.ar = ar
 
-    def apply(self):
+    def apply(self, w, h):
         '''Class method apply.
            **kwargs can be exchanged later on by h, w
         '''
