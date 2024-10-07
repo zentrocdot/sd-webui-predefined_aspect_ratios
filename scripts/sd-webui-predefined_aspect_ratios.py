@@ -4,8 +4,8 @@ import modules.scripts as scripts
 from modules.ui_components import ToolButton
 
 class ARButton(ToolButton):
-    '''Class for calculating the Width and Height
-       from the chosen aspect ratio.
+    '''Class for calculating the new Width and new Height for
+       use in the web UI from the chosen aspect ratio.
     '''   
     def __init__(self, ar=1.0, **kwargs):
         super().__init__(**kwargs)
