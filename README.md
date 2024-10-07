@@ -12,7 +12,7 @@ The base resolution is 512 pixel. This is the lowest values, which will be calcu
 
 Following aspect ratios are implemented:
 
-No specific Orientation
+**No specific Orientation**
 
 * 1:1 → 512 x 512 pixel
 
