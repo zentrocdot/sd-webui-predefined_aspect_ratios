@@ -8,7 +8,7 @@ from modules.ui_components import ToolButton
 
 from math import gcd
 
-aspect_ratios_dir = scripts.basedir()
+#aspect_ratios_dir = scripts.basedir()
 
 calculator_symbol = "\U0001F5A9"
 switch_values_symbol = "\U000021C5"
@@ -41,81 +41,6 @@ class ARButton(ToolButton):
     def reset(self, w, h):
         return [self.res, self.res]
 
-#def parse_aspect_ratios_file(filename):
-#    labels, values, comments = [], [], []
-#    file = Path(aspect_ratios_dir, filename)
-#    if not file.exists():
-#        return labels, values, comments
-#    with open(file, "r", encoding="utf-8") as f:
-#        lines = f.readlines()
-#    if not lines:
-#        return labels, values, comments
-#    for line in lines:
-#        if line.startswith("#"):
-#            continue
-#        if ',' not in line:
-#            continue
-#        try:
-#            label, value = line.strip().split(",")
-#            comment = ""
-#            if "#" in value:
-#                value, comment = value.split("#")
-#        except ValueError:
-#            print(f"skipping badly formatted line in aspect ratios file: {line}")
-#            continue
-#        labels.append(label)
-#        values.append(eval(value))
-#        comments.append(comment)
-#    return labels, values, comments
-
-#def parse_resolutions_file(filename):
-#    labels, values, comments = [], [], []
-#    file = Path(aspect_ratios_dir, filename)
-#    if not file.exists():
-#        return labels, values, comments
-#    with open(file, "r", encoding="utf-8") as f:
-#        lines = f.readlines()
-#    if not lines:
-#        return labels, values, comments
-#    for line in lines:
-#        if line.startswith("#"):
-#            continue
-#        if ',' not in line:
-#            continue
-#        try:
-#            label, width, height = line.strip().split(",")
-#            comment = ""
-#            if "#" in height:
-#                height, comment = height.split("#")
-#        except ValueError:
-#            print(f"skipping badly formatted line in resolutions file: {line}")
-#            continue
-#        resolution = (width, height)
-#        labels.append(label)
-#        values.append(resolution)
-#        comments.append(comment)
-#    return labels, values, comments
-
-# TODO: write a generic function handling both cases
-#def write_aspect_ratios_file(filename):
-#    aspect_ratios = [
-#        "1:1, 1.0 # 1:1 ratio based on minimum dimension\n",
-#        "3:2, 3/2 # Set width based on 3:2 ratio to height\n",
-#        "4:3, 4/3 # Set width based on 4:3 ratio to height\n",
-#        "16:9, 16/9 # Set width based on 16:9 ratio to height",
-#    ]
-#    with open(filename, "w", encoding="utf-8") as f:
-#        f.writelines(aspect_ratios)
-
-#def write_resolutions_file(filename):
-#    resolutions = [
-#        "1, 512, 512 # 1:1 square\n",
-#        "2, 768, 512 # 3:2 landscape\n",
-#        "3, 403, 716 # 9:16 portrait",
-#    ]
-#    with open(filename, "w", encoding="utf-8") as f:
-#        f.writelines(resolutions)
-
 def write_js_titles_file(button_titles):
     filename = Path(aspect_ratios_dir, "javascript", "button_titles.js")
     content = [
@@ -129,60 +54,10 @@ def write_js_titles_file(button_titles):
         )
         counter = counter + 1
     content.append("}")
-
     with open(filename, "w", encoding="utf-8") as f:
         f.writelines(content)
 
-#def get_reduced_ratio(n, d):
-#    n, d = list(map(int, (n, d)))
-#    if n == d:
-#        return "1:1"
-#    if n < d:
-#        div = gcd(d, n)
-#    else:
-#        div = gcd(n, d)
-#    w = int(n) // div
-#    h = int(d) // div
-#    if w == 8 and h == 5:
-#        w = 16
-#        h = 10
-#    return f"{w}:{h}"
-
-#def solve_aspect_ratio(w, h, n, d):
-#    if w != 0 and w:
-#        return round(w / (n / d))
-#    elif h != 0 and h:
-#        return round(h * (n / d))
-#    else:
-#        return 0
-
 class AspectRatioScript(scripts.Script):
-    '''def read_aspect_ratios(self):
-        ar_file = Path(aspect_ratios_dir, "aspect_ratios.txt")
-        if not ar_file.exists():
-            write_aspect_ratios_file(ar_file)
-        (
-            self.aspect_ratio_labels,
-            aspect_ratios,
-            self.aspect_ratio_comments,
-        ) = parse_aspect_ratios_file("aspect_ratios.txt")
-        self.aspect_ratios = list(map(float, aspect_ratios))
-        # TODO: check for duplicates
-        # TODO: check for invalid values
-        # TODO: use comments as tooltips
-        # see https://github.com/alemelis/sd-webui-ar/issues/5
-    '''    
-
-    '''def read_resolutions(self):
-        res_file = Path(aspect_ratios_dir, "resolutions.txt")
-        if not res_file.exists():
-            write_resolutions_file(res_file)
-        self.res_labels, res, self.res_comments = parse_resolutions_file(
-            "resolutions.txt"
-        )
-        self.res = [list(map(int, r)) for r in res]
-    '''    
-
     def title(self):
         return "Aspect Ratio picker"
 
@@ -220,23 +95,23 @@ class AspectRatioScript(scripts.Script):
                             inputs=resolution,
                             outputs=resolution,
                         )
-            self.read_resolutions()
+            #self.read_resolutions()
             with gr.Row(
                 elem_id=f'{"img" if is_img2img else "txt"}2img_row_resolutions'
             ):
                 # Toggle calculator display button
-                arc_show_calculator = gr.Button(
-                    value="Calc",
-                    visible=True,
-                    variant="secondary",
-                    elem_id="arc_show_calculator_button",
-                )
-                arc_hide_calculator = gr.Button(
-                    value="Calc",
-                    visible=False,
-                    variant="primary",
-                    elem_id="arc_hide_calculator_button",
-                )
+                #arc_show_calculator = gr.Button(
+                #    value="Calc",
+                #    visible=True,
+                #    variant="secondary",
+                #    elem_id="arc_show_calculator_button",
+                #)
+                #arc_hide_calculator = gr.Button(
+                #    value="Calc",
+                #    visible=False,
+                #    variant="primary",
+                #    elem_id="arc_hide_calculator_button",
+                #)
                 btns = [
                     ResButton(res=res, value=label)
                     for res, label in zip(self.res, self.res_labels)
@@ -398,40 +273,6 @@ class AspectRatioScript(scripts.Script):
                             inputs=[arc_desired_width, arc_desired_height],
                             outputs=resolution,
                         )
-            # Show calculator pane (and reset number input values)
-            #arc_show_calculator.click(
-            #    lambda: [
-            #        gr.update(visible=True),
-            #        gr.update(visible=False),
-            #        gr.update(visible=True),
-            #        gr.update(value=512),
-            #        gr.update(value=512),
-            #        gr.update(value=0),
-            #        gr.update(value=0),
-            #        gr.update(value="Aspect Ratio: **1:1**"),
-            #    ],
-            #    None,
-            #    [
-            #        arc_panel,
-            #        arc_show_calculator,
-            #        arc_hide_calculator,
-            #        arc_width1,
-            #        arc_height1,
-            #        arc_desired_width,
-            #        arc_desired_height,
-            #        arc_ar_display,
-            #    ],
-            #)
-            # Hide calculator pane
-            #arc_hide_calculator.click(
-            #    lambda: [
-            #        gr.update(visible=False),
-            #        gr.update(visible=True),
-            #        gr.update(visible=False),
-            #    ],
-            #    None,
-            #    [arc_panel, arc_show_calculator, arc_hide_calculator],
-            #)
 
     # Function after_component()
     def after_component(self, component, **kwargs):
