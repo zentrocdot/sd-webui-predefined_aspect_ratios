@@ -74,7 +74,7 @@ class AspectRatioScript(scripts.Script):
         with gr.Column(
             elem_id=f'{"img" if is_img2img else "txt"}2img_container_aspect_ratio'
         ):
-            # Loop over the row. 
+            # Loop over the row.
             with gr.Row(
                 elem_id=f'{"img" if is_img2img else "txt"}2img_row_aspect_ratio'
             ):
@@ -97,7 +97,7 @@ class AspectRatioScript(scripts.Script):
                             inputs=resolution,
                             outputs=resolution
                         )
-            # Loop over the row.            
+            # Loop over the row.       
             with gr.Row(
                 elem_id=f'{"img" if is_img2img else "txt"}2img_row_aspect_ratio'
             ):
@@ -120,7 +120,7 @@ class AspectRatioScript(scripts.Script):
                             inputs=resolution,
                             outputs=resolution
                         )
-            
+    
     # User defined method after_component.
     def after_component(self, component, **kwargs):
         '''Class method after_component.'''
