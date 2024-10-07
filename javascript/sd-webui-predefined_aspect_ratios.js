@@ -11,7 +11,7 @@ aspect_ratio_button_titles["Calculate Width"] = "Calculate new width based on so
 aspect_ratio_button_titles["Apply"] = "Apply calculated width and height to txt2img/img2img sliders";
 
 onUiUpdate(function(){
-    gradioApp().querySelectorAll('#txt2img_container_aspect_ratio button, #img2img_container_aspect_ratio button').forEach(function(elem){
+    gradioApp().querySelectorAll('txt2img_container_aspect_ratio button, img2img_container_aspect_ratio button').forEach(function(elem){
 	tooltip = aspect_ratio_button_titles[elem.textContent];
 	    if(tooltip){
 		elem.title = tooltip;
