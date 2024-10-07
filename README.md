@@ -1,14 +1,14 @@
 # Extension for the AUTOMATIC1111 Web UI
 
-Extension for the [AUTOMATIC1111/stable-diffusion-webui](https://github.com/AUTOMATIC1111/stable-diffusion-webui), which is adding buttons for the selection of predefined aspect ratios from within the web UI.
+<p align="justify">Extension for the [AUTOMATIC1111/stable-diffusion-webui](https://github.com/AUTOMATIC1111/stable-diffusion-webui), which is adding buttons for the selection of predefined aspect ratios from within the web UI.</p>
 
 ## Preface
 
-The existing solutions [3,4,5] are to complex for my personal needs. This is a version with just buttons of a predefined set of aspect ratios. They cover the most common aspect ratios used.
+<p align="justify">The existing solutions [3,4,5] are to complex for my personal needs. This is a version with just buttons of a predefined set of aspect ratios. They cover the most common aspect ratios used.</p>
 
 ## Selector Buttons for Predefined Aspect Ratios
 
-The base resolution is 512 pixel. This is the lowest values, which will be calculated. Minimal value of height or width is 512 pixel.
+<p align="justify">The base resolution is 512 pixel. This is the lowest values, which will be calculated. Minimal value of height or width is 512 pixel.</p>
 
 Following aspect ratios are implemented:
 
