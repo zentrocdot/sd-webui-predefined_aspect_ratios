@@ -68,7 +68,7 @@ Following aspect ratios are implemented:
 
 After installation one will find a button panel within the web UI.
 
-<a target="_blank" href=""><img src="button_panel.png" alt="button panel"></a>
+<a target="_blank" href=""><img src="button_panel_new.png" alt="button panel"></a>
 
 ## Known Problems
 
