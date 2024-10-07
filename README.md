@@ -64,9 +64,13 @@ Following aspect ratios are implemented:
 
 * 10:16 → 512 x 1024 pixel → (Factor 0.625)
 
+## Known Problems
+
+After installation of the Extension it could be that the web UI has to be reloaded from the browser that the Extension can be used.
+
 ## To-Do
 
-The aspect ratio of 1:1 is in parallel the base resolution or if 1:1 is clicked it is like a reset of the resolutions. So I will decouple this button in the next version from first and second line.
+Nothing to-do yet.
 
 # References
 
