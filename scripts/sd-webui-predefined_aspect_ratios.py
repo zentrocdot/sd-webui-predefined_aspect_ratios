@@ -15,7 +15,6 @@ switch_values_symbol = "\U000021C5" # 交换符号
 get_dimensions_symbol = "\u2B07\ufe0f" # 获取尺寸符号
 get_image_dimensions_symbol = "\U0001F5BC" # 获取图片尺寸符号
 
-
 class ResButton(ToolButton):
     def __init__(self, res=(512, 512), **kwargs):
         super().__init__(**kwargs)
@@ -649,18 +648,16 @@ class AspectRatioScript(scripts.Script): # 定义这个插件脚本的类
                         # [arc_panel, arc_show_calculator, arc_hide_calculator],
                     # )
 
-    # https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/7456#issuecomment-1414465888
+    # Function after_component()
     def after_component(self, component, **kwargs):
         if kwargs.get("elem_id") == "txt2img_width":
             self.t2i_w = component
         if kwargs.get("elem_id") == "txt2img_height":
             self.t2i_h = component
-
         if kwargs.get("elem_id") == "img2img_width":
             self.i2i_w = component
         if kwargs.get("elem_id") == "img2img_height":
             self.i2i_h = component
-
         if kwargs.get("elem_id") == "img2img_image":
             self.image = [component]
         if kwargs.get("elem_id") == "img2img_sketch":
