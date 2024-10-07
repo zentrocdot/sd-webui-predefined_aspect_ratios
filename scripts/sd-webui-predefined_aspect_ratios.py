@@ -29,7 +29,7 @@ class ARButton(ToolButton):
     def reset(self, w, h):
         return [self.res, self.res]
 
-def write_js_titles_file(button_titles):
+'''def write_js_titles_file(button_titles):
     filename = Path(aspect_ratios_dir, "javascript", "button_titles.js")
     content = [
         "// Do not put custom titles here. This file is overwritten each time the web UI is started.\n"
@@ -44,6 +44,7 @@ def write_js_titles_file(button_titles):
     content.append("}")
     with open(filename, "w", encoding="utf-8") as f:
         f.writelines(content)
+        '''
 
 class AspectRatioScript(scripts.Script):
     def title(self):
@@ -65,10 +66,10 @@ class AspectRatioScript(scripts.Script):
                 )
                 
                 self.aspect_ratios = [
-                   "1:1, 1.0 # 1:1 ratio based on minimum dimension\n",
-                   "3:2, 3/2 # Set width based on 3:2 ratio to height\n",
-                   "4:3, 4/3 # Set width based on 4:3 ratio to height\n",
-                   "16:9, 16/9 # Set width based on 16:9 ratio to height",
+                   "1:1, 1.0 # 1:1 ratio based on minimum dimension",
+                   "3:2, 3/2 # Set width based on 3:2 ratio to height",
+                   "4:3, 4/3 # Set width based on 4:3 ratio to height",
+                   "16:9, 16/9 # Set width based on 16:9 ratio to height"
                 ]
                 self.aspect_ratio_labels = [
                    "1:1",
@@ -76,8 +77,8 @@ class AspectRatioScript(scripts.Script):
                    "4:3",
                    "16:9",
                 ]
-                self.res = ["512,512", "512,768"]
-                self.res_labels = ["512,512", "512,768"]
+                #self.res = ["512,512", "512,768"]
+                #self.res_labels = ["512,512", "512,768"]
                 # Aspect Ratio buttons
                 btns = [
                     ARButton(ar=ar, value=label)
