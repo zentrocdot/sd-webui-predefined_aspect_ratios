@@ -100,6 +100,7 @@ class AspectRatioScript(scripts.Script):
             # Write button_titles.js with labels and comments read from aspect ratios and resolutions files
             button_titles = [self.aspect_ratio_labels + self.res_labels]
             self.aspect_ratio_comments = ["1", "2", "3", "4"]
+            self.res_comments = ["1", "2", "3", "4"]
             button_titles.append(self.aspect_ratio_comments + self.res_comments)
             write_js_titles_file(button_titles)
             # dummy components needed for JS function
