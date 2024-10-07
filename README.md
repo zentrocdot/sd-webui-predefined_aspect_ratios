@@ -8,6 +8,8 @@ The existing solutions [3,4,5] are to complex for my personal needs. This is a v
 
 ## Selector Buttons for Predefined Aspect Ratios
 
+The base resolution is 512 pixel. This is the lowest values, which will be calculated. Minimal value of height or width is 512 pixel.
+
 Following aspect ratios are implemented:
 
 No specific Orientation
@@ -36,7 +38,7 @@ Orientation Landscape
 
 * 16:9 → 910 x 512 pixel → (Factor 1.78)
 
-* 16:10 → 819 x 640 pixel → (Factor 1.6) 
+* 16:10 → 819 x 512 pixel → (Factor 1,599609375) 
 
 ### Orientation Portrait
 
