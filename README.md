@@ -64,5 +64,11 @@ Orientation Landscape
 
 [2] https://buymeacoffee.com/zentrocdot/stable-diffusion-aspect-ratios
 
+[3] https://github.com/alemelis/sd-webui-ar
+
+[4] https://github.com/altoiddealer/--sd-webui-ar-plusplus
+
+[5] https://github.com/xhoxye/sd-webui-ar_xhox
+
 
 
