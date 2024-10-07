@@ -9,6 +9,8 @@ class ARButton(ToolButton):
         self.ar = ar
 
     def apply(self, w, h):
+        w = 512
+        h = 512
         if self.ar > 1.0:  # fixed height, change width
             w = self.ar * h
         elif self.ar < 1.0:  # fixed width, change height
