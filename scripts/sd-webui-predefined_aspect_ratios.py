@@ -36,9 +36,9 @@ class ARButton(ToolButton):
         else:  # set minimum dimension to both
             min_dim = min([w, h])
             w, h = min_dim, min_dim
-        # Create a new list.    
+        # Create a new list.
         retlst = list(map(round, [w, h]))
-        # Return the list with width and height.    
+        # Return the list with width and height.
         return retlst
 
     def reset(self, w, h):
