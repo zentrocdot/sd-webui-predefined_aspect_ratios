@@ -22,6 +22,7 @@ class ARButton(ToolButton):
         self.ar = ar
 
     def apply(self, w, h):
+        '''Class method apply.'''
         # Initialise height and width.
         w = 512
         h = 512
@@ -40,6 +41,7 @@ class ARButton(ToolButton):
         return retlst
 
     def reset(self, w, h):
+        '''Class method reset.'''
         return [self.res, self.res]
 
 class AspectRatioScript(scripts.Script):
