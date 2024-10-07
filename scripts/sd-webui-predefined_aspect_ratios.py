@@ -1,7 +1,6 @@
 import contextlib
 import gradio as gr
 import modules.scripts as scripts
-#from modules.scripts import scripts
 #from pathlib import Path
 from modules.ui_components import ToolButton
 #from math import gcd
