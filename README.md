@@ -28,21 +28,21 @@
 
 * 3:2 → 768 x 512 pixel → (Factor 1.5)
 
-* 4:3 → 683 x 512 pixel → (Factor 1.33)
+* 4:3 → 683 x 512 pixel → (Factor 1,333984375)
 
-* 5:3 → 853 x 512 pixel → (Factor 1.67) 
+* 5:3 → 853 x 512 pixel → (Factor 1,666015625) 
 
 * 5:4 → 640 x 512 pixel → (Factor 1.25) 
 
-* 6:5 → 614 x 512 pixel → (Factor 1.2) 
+* 6:5 → 614 x 512 pixel → (Factor 1,19921875) 
 
-* 7:5 → 717 x 512 pixel → (Factor 1.4) 
+* 7:5 → 717 x 512 pixel → (Factor 1,400390625) 
 
-* 14:9 → 796 x 512 pixel → (Factor 1.56) 
+* 14:9 → 796 x 512 pixel → (Factor 1,5546875) 
 
-* 15:9 → 853 x 512 pixel → (Factor 1.66) 
+* 15:9 → 853 x 512 pixel → (Factor 1,666015625) 
 
-* 16:9 → 910 x 512 pixel → (Factor 1.78)
+* 16:9 → 910 x 512 pixel → (Factor 1,77734375)
 
 * 16:10 → 819 x 512 pixel → (Factor 1,599609375) 
 
@@ -58,17 +58,17 @@
 
 * 4:5 → 512 x 640 pixel → (Factor 0.8) 
 
-* 5:6 → 512 x 614 pixel → (Factor 0.833333333) 
+* 5:6 → 512 x 614 pixel → (Factor 0,833876221) 
 
 * 5:7 → 512 x 717 pixel → (Factor 0,714086471) 
 
-* 9:14 → 512 x 796 pixel → (Factor 0.642857143)
+* 9:14 → 512 x 796 pixel → (Factor 0,64321608)
 
-* 9:15 → 512 x 910 pixel → (Factor 0.6)
+* 9:15 → 512 x 853 pixel → (Factor 0,600234467)
 
-* 9:16 → 512 x 819 pixel → (Factor 0.5625)
+* 9:16 → 512 x 910 pixel → (Factor 0,562637363)
 
-* 10:16 → 512 x 1024 pixel → (Factor 0.625)
+* 10:16 → 512 x 819 pixel → (Factor 0,625152625)
 
 ## What the Extension Does
 
