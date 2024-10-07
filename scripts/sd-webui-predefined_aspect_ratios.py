@@ -64,10 +64,10 @@ class AspectRatioScript(scripts.Script):
                         )
                         print(b) 
             # Dummy components needed for JS function
-            dummy_text1 = gr.Text(visible=False)
-            dummy_text2 = gr.Text(visible=False)
-            dummy_text3 = gr.Text(visible=False)
-            dummy_text4 = gr.Text(visible=False)
+            #dummy_text1 = gr.Text(visible=False)
+            #dummy_text2 = gr.Text(visible=False)
+            #dummy_text3 = gr.Text(visible=False)
+            #dummy_text4 = gr.Text(visible=False)
             
     # Function after_component()
     def after_component(self, component, **kwargs):
