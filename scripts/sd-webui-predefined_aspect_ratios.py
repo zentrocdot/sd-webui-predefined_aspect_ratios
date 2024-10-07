@@ -8,6 +8,7 @@ class ARButton(ToolButton):
        use in the web UI from the chosen aspect ratio.
     '''   
     def __init__(self, ar=1.0, **kwargs):
+        '''Class init method.'''
         super().__init__(**kwargs)
         self.ar = ar
 
@@ -23,8 +24,11 @@ class ARButton(ToolButton):
         else:  # set minimum dimension to both
             min_dim = min([w, h])
             w, h = min_dim, min_dim
+        # Create a new list.    
+        retlst = list(map(round, [w, h]))
         # Return the calculated values for width and heigt.    
-        return list(map(round, [w, h]))
+        #return list(map(round, [w, h]))
+        return retlst
 
     def reset(self, w, h):
         return [self.res, self.res]
