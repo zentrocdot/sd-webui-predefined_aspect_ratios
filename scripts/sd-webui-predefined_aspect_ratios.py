@@ -88,6 +88,8 @@ class AspectRatioScript(scripts.Script):
                    "4:3",
                    "16:9",
                 ]
+                self.res = ["512,512", "512,768"]
+                self.res_labels = ["512,512", "512,768"]
                 btns = [
                     ARButton(ar=ar, value=label)
                     for ar, label in zip(
