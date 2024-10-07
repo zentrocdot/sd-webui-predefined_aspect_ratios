@@ -45,6 +45,7 @@ class ARButton(ToolButton):
         return [self.res, self.res]
 
 class AspectRatioScript(scripts.Script):
+    '''Class for selecting the aspect ratio.'''
     def title(self):
         return "Aspect Ratio Selector"
 
@@ -52,10 +53,10 @@ class AspectRatioScript(scripts.Script):
         return scripts.AlwaysVisible
 
     def ui(self, is_img2img):
-        self.aspect_ratios = (1.0, 2.0, 3/2, 4/3, 5/3, 5/4, 6/5, 7/5, 14/9, 15/9, 16/9, 16/10, 
-                                   0.5, 2/3, 3/4, 3/5, 4/5, 5/6, 5/7, 9/14, 9/15, 9/16, 10/16)
-        self.aspect_ratio_labels = ("1:1", "2:1", "3:2", "4:3", "5:3", "5:4", "6:5", "7:5", "14:9", "15:9", "16:9", "16:10",
-                                           "1:2", "2:3", "3:4", "3:5", "4:5", "5:6", "5:7", "9:14", "9:15", "9:16", "10:16")
+        self.aspect_ratios_0 = (1.0, 2.0, 3/2, 4/3, 5/3, 5/4, 6/5, 7/5, 14/9, 15/9, 16/9, 16/10) 
+        self.aspect_ratios_1 = (1.0, 0.5, 2/3, 3/4, 3/5, 4/5, 5/6, 5/7, 9/14, 9/15, 9/16, 10/16)
+        self.aspect_ratios_labels_0 = ("1:1", "2:1", "3:2", "4:3", "5:3", "5:4", "6:5", "7:5", "14:9", "15:9", "16:9", "16:10",
+        self.aspect_ratios_labels_1 = ("1:1", "1:2", "2:3", "3:4", "3:5", "4:5", "5:6", "5:7", "9:14", "9:15", "9:16", "10:16")
         with gr.Column(
             elem_id=f'{"img" if is_img2img else "txt"}2img_container_aspect_ratio'
         ):
@@ -66,8 +67,8 @@ class AspectRatioScript(scripts.Script):
                 btns = [
                     ARButton(ar=ar, value=label)
                     for ar, label in zip(
-                        self.aspect_ratios,
-                        self.aspect_ratio_labels
+                        self.aspect_ratios_0,
+                        self.aspect_ratios_labels_0
                     )
                 ]
                 with contextlib.suppress(AttributeError):
@@ -88,8 +89,8 @@ class AspectRatioScript(scripts.Script):
                 btns = [
                     ARButton(ar=ar, value=label)
                     for ar, label in zip(
-                        self.aspect_ratios,
-                        self.aspect_ratio_labels
+                        self.aspect_ratios_1,
+                        self.aspect_ratios_labels_1
                     )
                 ]
                 with contextlib.suppress(AttributeError):
