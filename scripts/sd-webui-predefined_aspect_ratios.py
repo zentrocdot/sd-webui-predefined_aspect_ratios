@@ -69,7 +69,7 @@ class AspectRatioScript(scripts.Script):
                             outputs=resolution
                         )
             
-    # Function after_component()
+    # User defined function after_component()
     def after_component(self, component, **kwargs):
         if kwargs.get("elem_id") == "txt2img_width":
             self.t2i_w = component
