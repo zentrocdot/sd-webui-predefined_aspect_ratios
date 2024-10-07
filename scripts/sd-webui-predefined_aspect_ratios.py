@@ -77,7 +77,7 @@ class AspectRatioScript(scripts.Script):
             with gr.Row(
                 elem_id=f'{"img" if is_img2img else "txt"}2img_row_aspect_ratio'
             ):
-                # Aspect ratio buttons.
+                # Aspect ratio buttons line 0.
                 btns = [
                     ARButton(ar=ar, value=label)
                     for ar, label in zip(
@@ -99,7 +99,7 @@ class AspectRatioScript(scripts.Script):
             with gr.Row(
                 elem_id=f'{"img" if is_img2img else "txt"}2img_row_aspect_ratio'
             ):
-                # Aspect ratio buttons.
+                # Aspect ratio buttons line 1.
                 btns = [
                     ARButton(ar=ar, value=label)
                     for ar, label in zip(
