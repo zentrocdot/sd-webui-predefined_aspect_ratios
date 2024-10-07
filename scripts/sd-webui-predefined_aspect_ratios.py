@@ -4,13 +4,18 @@ import modules.scripts as scripts
 from modules.ui_components import ToolButton
 
 class ARButton(ToolButton):
+    '''Class for calculating the Width and Height
+       from the chosen aspect ratio.
+    '''   
     def __init__(self, ar=1.0, **kwargs):
         super().__init__(**kwargs)
         self.ar = ar
 
     def apply(self, w, h):
+        # Initialise height and width.
         w = 512
         h = 512
+        # Calculate new width and height.
         if self.ar > 1.0:  # fixed height, change width
             w = self.ar * h
         elif self.ar < 1.0:  # fixed width, change height
@@ -18,6 +23,7 @@ class ARButton(ToolButton):
         else:  # set minimum dimension to both
             min_dim = min([w, h])
             w, h = min_dim, min_dim
+        # Return the calculated values for width and heigt.    
         return list(map(round, [w, h]))
 
     def reset(self, w, h):
