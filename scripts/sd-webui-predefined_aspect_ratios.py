@@ -1,6 +1,6 @@
 '''Extension for AUTOMATIC1111 called sd-webui-predefined_aspect_ratios.
 
-Version 0.0.0.2
+Version 0.0.0.3
 '''
 # pylint: disable=invalid-name
 # pylint: disable=too-few-public-methods
@@ -77,70 +77,70 @@ class AspectRatioScript(scripts.Script):
         with gr.Column(
             elem_id=f'{"img" if is_img2img else "txt"}2img_container_aspect_ratio'
         ):
-          with gr.Accordion(open=True, label='Aspect Ratios', visible=True): 
-            # Loop over the row 0.
-            with gr.Row(
-                elem_id=f'{"img" if is_img2img else "txt"}2img_row_aspect_ratio'
-            ):
-                # Aspect ratio button line 0.
-                btns = [ARButton(ar=1.0, value="1:1")]
-                with contextlib.suppress(AttributeError):
-                    for b in btns:
-                        if is_img2img:
-                            resolution = [self.i2i_w, self.i2i_h]
-                        else:
-                            resolution = [self.t2i_w, self.t2i_h]
-                        b.click(
-                            b.apply,
-                            inputs=resolution,
-                            outputs=resolution
+            with gr.Accordion(open=True, label='Predefined Aspect Ratios', visible=True): 
+                # Loop over the row 0.
+                with gr.Row(
+                    elem_id=f'{"img" if is_img2img else "txt"}2img_row_aspect_ratio'
+                ):
+                    # Aspect ratio button line 0.
+                    btns = [ARButton(ar=1.0, value="1:1")]
+                    with contextlib.suppress(AttributeError):
+                        for b in btns:
+                            if is_img2img:
+                                resolution = [self.i2i_w, self.i2i_h]
+                            else:
+                                resolution = [self.t2i_w, self.t2i_h]
+                            b.click(
+                                b.apply,
+                                inputs=resolution,
+                                outputs=resolution
+                            )
+                # Loop over the row 1.
+                with gr.Row(
+                    elem_id=f'{"img" if is_img2img else "txt"}2img_row_aspect_ratio'
+                ):
+                    # Aspect ratio buttons line 1.
+                    btns = [
+                        ARButton(ar=ar, value=label)
+                        for ar, label in zip(
+                            self.ar_values_0,
+                            self.ar_labels_0
                         )
-            # Loop over the row 1.
-            with gr.Row(
-                elem_id=f'{"img" if is_img2img else "txt"}2img_row_aspect_ratio'
-            ):
-                # Aspect ratio buttons line 1.
-                btns = [
-                    ARButton(ar=ar, value=label)
-                    for ar, label in zip(
-                        self.ar_values_0,
-                        self.ar_labels_0
-                    )
-                ]
-                with contextlib.suppress(AttributeError):
-                    for b in btns:
-                        if is_img2img:
-                            resolution = [self.i2i_w, self.i2i_h]
-                        else:
-                            resolution = [self.t2i_w, self.t2i_h]
-                        b.click(
-                            b.apply,
-                            inputs=resolution,
-                            outputs=resolution
+                    ]
+                    with contextlib.suppress(AttributeError):
+                        for b in btns:
+                            if is_img2img:
+                                resolution = [self.i2i_w, self.i2i_h]
+                            else:
+                                resolution = [self.t2i_w, self.t2i_h]
+                            b.click(
+                                b.apply,
+                                inputs=resolution,
+                                outputs=resolution
+                            )
+                # Loop over the row 2.
+                with gr.Row(
+                    elem_id=f'{"img" if is_img2img else "txt"}2img_row_aspect_ratio'
+                ):
+                    # Aspect ratio buttons line 2.
+                    btns = [
+                        ARButton(ar=ar, value=label)
+                        for ar, label in zip(
+                            self.ar_values_1,
+                            self.ar_labels_1
                         )
-            # Loop over the row 2.
-            with gr.Row(
-                elem_id=f'{"img" if is_img2img else "txt"}2img_row_aspect_ratio'
-            ):
-                # Aspect ratio buttons line 2.
-                btns = [
-                    ARButton(ar=ar, value=label)
-                    for ar, label in zip(
-                        self.ar_values_1,
-                        self.ar_labels_1
-                    )
-                ]
-                with contextlib.suppress(AttributeError):
-                    for b in btns:
-                        if is_img2img:
-                            resolution = [self.i2i_w, self.i2i_h]
-                        else:
-                            resolution = [self.t2i_w, self.t2i_h]
-                        b.click(
-                            b.apply,
-                            inputs=resolution,
-                            outputs=resolution
-                        )
+                    ]
+                    with contextlib.suppress(AttributeError):
+                        for b in btns:
+                            if is_img2img:
+                                resolution = [self.i2i_w, self.i2i_h]
+                            else:
+                                resolution = [self.t2i_w, self.t2i_h]
+                            b.click(
+                                b.apply,
+                                inputs=resolution,
+                                outputs=resolution
+                            )
     
     # User defined method after_component.
     def after_component(self, component, **kwargs):
