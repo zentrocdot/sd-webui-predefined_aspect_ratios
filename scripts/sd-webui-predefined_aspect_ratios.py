@@ -1,27 +1,15 @@
 import contextlib
 from pathlib import Path
-
 import gradio as gr
-
 import modules.scripts as scripts
 from modules.ui_components import ToolButton
-
 from math import gcd
 
 aspect_ratios_dir = scripts.basedir()
 
-#calculator_symbol = "\U0001F5A9"
 switch_values_symbol = "\U000021C5"
 get_dimensions_symbol = "\u2B07\ufe0f"
 get_image_dimensions_symbol = "\U0001F5BC"
-
-#class ResButton(ToolButton):
-#    def __init__(self, res=(512, 512), **kwargs):
-#        super().__init__(**kwargs)
-#        self.w, self.h = res
-#
-#    def reset(self):
-#        return [self.w, self.h]
 
 class ARButton(ToolButton):
     def __init__(self, ar=1.0, **kwargs):
@@ -109,25 +97,9 @@ class AspectRatioScript(scripts.Script):
                             inputs=resolution,
                             outputs=resolution,
                         )
-            #with gr.Row(
-            #    elem_id=f'{"img" if is_img2img else "txt"}2img_row_resolutions'
-            #):
-            #    btns = [
-            #        ResButton(res=res, value=label)
-            #        for res, label in zip(self.res, self.res_labels)
-            #    ]
-            #    with contextlib.suppress(AttributeError):
-            #        for b in btns:
-            #            if is_img2img:
-            #                resolution = [self.i2i_w, self.i2i_h]
-            #            else:
-            #                resolution = [self.t2i_w, self.t2i_h]
-            #            b.click(
-            #                b.reset,
-            #                outputs=resolution,
-            #            )
             # Write button_titles.js with labels and comments read from aspect ratios and resolutions files
             button_titles = [self.aspect_ratio_labels + self.res_labels]
+            self.aspect_ratio_comments = ["1", "2", "3", "4"]
             button_titles.append(self.aspect_ratio_comments + self.res_comments)
             write_js_titles_file(button_titles)
             # dummy components needed for JS function
