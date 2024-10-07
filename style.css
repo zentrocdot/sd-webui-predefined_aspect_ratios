@@ -8,4 +8,5 @@
 #txt2img_row_aspect_ratio,
 #img2img_row_aspect_ratio {
 	gap: 8px;
+	max-width: unset !important;
 }
