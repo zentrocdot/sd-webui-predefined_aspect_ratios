@@ -108,6 +108,7 @@ class AspectRatioScript(scripts.Script):
             dummy_text3 = gr.Text(visible=False)
             dummy_text4 = gr.Text(visible=False)
             # Aspect Ratio Calculator
+            '''
             with gr.Column(
                 visible=False, variant="panel", elem_id="arc_panel"
             ) as arc_panel:
@@ -245,6 +246,7 @@ class AspectRatioScript(scripts.Script):
                             inputs=[arc_desired_width, arc_desired_height],
                             outputs=resolution,
                         )
+                        '''
 
     # Function after_component()
     def after_component(self, component, **kwargs):
