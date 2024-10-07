@@ -6,7 +6,7 @@ Extension for the [AUTOMATIC1111/stable-diffusion-webui](https://github.com/AUTO
 
 No specific Orientation
 
-1:1 → 512 x 512 pixel
+* 1:1 → 512 x 512 pixel
 
 Orientation Landscape
 
