@@ -41,7 +41,6 @@ class ARButton(ToolButton):
     def reset(self, w, h):
         return [self.res, self.res]
 
-
 def parse_aspect_ratios_file(filename):
     labels, values, comments = [], [], []
     file = Path(aspect_ratios_dir, filename)
@@ -398,39 +397,39 @@ class AspectRatioScript(scripts.Script):
                             outputs=resolution,
                         )
             # Show calculator pane (and reset number input values)
-            arc_show_calculator.click(
-                lambda: [
-                    gr.update(visible=True),
-                    gr.update(visible=False),
-                    gr.update(visible=True),
-                    gr.update(value=512),
-                    gr.update(value=512),
-                    gr.update(value=0),
-                    gr.update(value=0),
-                    gr.update(value="Aspect Ratio: **1:1**"),
-                ],
-                None,
-                [
-                    arc_panel,
-                    arc_show_calculator,
-                    arc_hide_calculator,
-                    arc_width1,
-                    arc_height1,
-                    arc_desired_width,
-                    arc_desired_height,
-                    arc_ar_display,
-                ],
-            )
+            #arc_show_calculator.click(
+            #    lambda: [
+            #        gr.update(visible=True),
+            #        gr.update(visible=False),
+            #        gr.update(visible=True),
+            #        gr.update(value=512),
+            #        gr.update(value=512),
+            #        gr.update(value=0),
+            #        gr.update(value=0),
+            #        gr.update(value="Aspect Ratio: **1:1**"),
+            #    ],
+            #    None,
+            #    [
+            #        arc_panel,
+            #        arc_show_calculator,
+            #        arc_hide_calculator,
+            #        arc_width1,
+            #        arc_height1,
+            #        arc_desired_width,
+            #        arc_desired_height,
+            #        arc_ar_display,
+            #    ],
+            #)
             # Hide calculator pane
-            arc_hide_calculator.click(
-                lambda: [
-                    gr.update(visible=False),
-                    gr.update(visible=True),
-                    gr.update(visible=False),
-                ],
-                None,
-                [arc_panel, arc_show_calculator, arc_hide_calculator],
-            )
+            #arc_hide_calculator.click(
+            #    lambda: [
+            #        gr.update(visible=False),
+            #        gr.update(visible=True),
+            #        gr.update(visible=False),
+            #    ],
+            #    None,
+            #    [arc_panel, arc_show_calculator, arc_hide_calculator],
+            #)
 
     # Function after_component()
     def after_component(self, component, **kwargs):
