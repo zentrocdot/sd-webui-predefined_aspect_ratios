@@ -37,8 +37,8 @@ class AspectRatioScript(scripts.Script):
         return scripts.AlwaysVisible
 
     def ui(self, is_img2img):
-        self.aspect_ratios = (1.0, 2.0, 3/2, 4/3, 5/4, 16/9, 0.5, 2/3, 3/4, 4/5, 9/16)
-        self.aspect_ratio_labels = ("1:1", "2:1", "3:2", "4:3", "5:4", "16:9", "1:2", "2:3", "3:4", "4:5", "9:16")
+        self.aspect_ratios = (1.0, 2.0, 3/2, 4/3, 5/4, 7/5, 16/9, 0.5, 2/3, 3/4, 4/5, 5/7, 9/16)
+        self.aspect_ratio_labels = ("1:1", "2:1", "3:2", "4:3", "5:4", "7:5", "16:9", "1:2", "2:3", "3:4", "4:5", "5:7", "9:16")
         with gr.Column(
             elem_id=f'{"img" if is_img2img else "txt"}2img_container_aspect_ratio'
         ):
