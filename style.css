@@ -22,8 +22,3 @@
 
 button#arc_show_calculator_button,
 button#arc_hide_calculator_button,
-#arc_empty_space {
-	max-width: 45px !important;
-	min-width: unset !important;
-	padding: var(--size-0-5) var(--size-2) !important;
-}
