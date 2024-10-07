@@ -6,6 +6,10 @@
 # pylint: disable=missing-function-docstring
 # pylint: disable=import-error
 # pylint: disable=consider-using-from-import
+# pylint: disable=trailing-whitespace
+# pylint: disable=unused-argument
+# pylint: disable=too-many-instance-attributes
+# pylint: disable=no-self-use
 
 # Import the Python modules.
 import contextlib
@@ -59,7 +63,7 @@ class AspectRatioScript(scripts.Script):
         self.ar_labels_1 = ("1:1", "1:2", "2:3", "3:4", "3:5",
                             "4:5", "5:6", "5:7", "9:14", "9:15",
                             "9:16", "10:16")
-        
+    
     def title(self):
         '''Class method title.'''
         return "Aspect Ratio Selector"
@@ -97,7 +101,7 @@ class AspectRatioScript(scripts.Script):
                             inputs=resolution,
                             outputs=resolution
                         )
-            # Loop over the row.       
+            # Loop over the row.
             with gr.Row(
                 elem_id=f'{"img" if is_img2img else "txt"}2img_row_aspect_ratio'
             ):
