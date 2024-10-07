@@ -59,7 +59,7 @@ def write_js_titles_file(button_titles):
 
 class AspectRatioScript(scripts.Script):
     def title(self):
-        return "Aspect Ratio picker"
+        return "Aspect Ratio Picker"
 
     def show(self, is_img2img):
         return scripts.AlwaysVisible
@@ -68,7 +68,6 @@ class AspectRatioScript(scripts.Script):
         with gr.Column(
             elem_id=f'{"img" if is_img2img else "txt"}2img_container_aspect_ratio'
         ):
-            #self.read_aspect_ratios()
             with gr.Row(
                 elem_id=f'{"img" if is_img2img else "txt"}2img_row_aspect_ratio'
             ):
@@ -101,23 +100,9 @@ class AspectRatioScript(scripts.Script):
                             inputs=resolution,
                             outputs=resolution,
                         )
-            #self.read_resolutions()
             with gr.Row(
                 elem_id=f'{"img" if is_img2img else "txt"}2img_row_resolutions'
             ):
-                # Toggle calculator display button
-                #arc_show_calculator = gr.Button(
-                #    value="Calc",
-                #    visible=True,
-                #    variant="secondary",
-                #    elem_id="arc_show_calculator_button",
-                #)
-                #arc_hide_calculator = gr.Button(
-                #    value="Calc",
-                #    visible=False,
-                #    variant="primary",
-                #    elem_id="arc_hide_calculator_button",
-                #)
                 btns = [
                     ResButton(res=res, value=label)
                     for res, label in zip(self.res, self.res_labels)
