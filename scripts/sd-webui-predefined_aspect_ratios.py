@@ -21,8 +21,8 @@ class ARButton(ToolButton):
             w, h = min_dim, min_dim
         return list(map(round, [w, h]))
 
-    #def reset(self, w, h):
-    #    return [self.res, self.res]
+    def reset(self, w, h):
+        return [self.res, self.res]
 
 class AspectRatioScript(scripts.Script):
     def title(self):
