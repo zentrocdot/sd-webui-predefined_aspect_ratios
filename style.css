@@ -11,11 +11,3 @@
 #img2img_row_resolutions {
 	gap: 8px;
 }
-
-#txt2img_row_aspect_ratio button,
-#txt2img_row_resolutions button,
-#img2img_row_aspect_ratio button,
-#img2img_row_resolutions button {
-	gap: 10px !important;
-	max-width: unset !important;
-}
