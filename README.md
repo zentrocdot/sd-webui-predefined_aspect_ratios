@@ -64,6 +64,10 @@ Following aspect ratios are implemented:
 
 * 10:16 → 512 x 1024 pixel → (Factor 0.625)
 
+## What the Extension Does
+
+to-do ...
+
 ## Known Problems
 
 After installation of the Extension it could be that the web UI has to be reloaded from the browser that the Extension can be used.
