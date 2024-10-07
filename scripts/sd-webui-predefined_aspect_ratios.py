@@ -1,7 +1,7 @@
 import contextlib
-from pathlib import Path
 import gradio as gr
 import modules.scripts as scripts
+from pathlib import Path
 from modules.ui_components import ToolButton
 from math import gcd
 
@@ -47,7 +47,7 @@ def write_js_titles_file(button_titles):
 
 class AspectRatioScript(scripts.Script):
     def title(self):
-        return "Aspect Ratio Picker"
+        return "Aspect Ratio Selector"
 
     def show(self, is_img2img):
         return scripts.AlwaysVisible
