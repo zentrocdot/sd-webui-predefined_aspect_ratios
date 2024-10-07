@@ -1,9 +1,7 @@
 import contextlib
 import gradio as gr
 import modules.scripts as scripts
-#from pathlib import Path
 from modules.ui_components import ToolButton
-#from math import gcd
 
 class ARButton(ToolButton):
     def __init__(self, ar=1.0, **kwargs):
@@ -31,8 +29,8 @@ class AspectRatioScript(scripts.Script):
         return scripts.AlwaysVisible
 
     def ui(self, is_img2img):
-        self.aspect_ratios = (1.0, 2.0, 3/2, 4/3, 16/9)
-        self.aspect_ratio_labels = ("1:1", "2:1", "3:2", "4:3", "16:9")
+        self.aspect_ratios = (1.0, 2.0, 3/2, 4/3, 16/9, 0.5)
+        self.aspect_ratio_labels = ("1:1", "2:1", "3:2", "4:3", "16:9", "1:2")
         with gr.Column(
             elem_id=f'{"img" if is_img2img else "txt"}2img_container_aspect_ratio'
         ):
