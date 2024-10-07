@@ -19,10 +19,10 @@
 	gap: 10px !important;
 	max-width: unset !important;
 	min-width: var(150px); /* Please replace this with the desired minimum width */
-	font-size: var(0.8em); /* 请替换 为您想要的字体大小 */
-	white-space: nowrap; /* 禁止换行 */	
-	overflow: hidden; /* 隐藏溢出内容 */
-	text-overflow: ellipsis; /* 超出部分用省略号显示 */
+	font-size: var(0.8em); /* Please replace it with the font size you want */
+	white-space: nowrap; /* line feed (computing) */	
+	overflow: hidden; /* Hide overflow content */
+	text-overflow: ellipsis; /* Excesses are shown with ellipses */
 }
 
 button#arc_show_calculator_button,
