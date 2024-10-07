@@ -1,5 +1,5 @@
 if ("undefined" === typeof ar_button_titles) {
-	ar_button_titles = {};
+    ar_button_titles = {};
 }
 
 ar_button_titles["Calc"] = "Show or hide the aspect ratio calculator";
@@ -11,9 +11,9 @@ ar_button_titles["Calculate Width"] = "Calculate new width based on source aspec
 ar_button_titles["Apply"] = "Apply calculated width and height to txt2img/img2img sliders";
 
 onUiUpdate(function(){
-	gradioApp().querySelectorAll('#txt2img_container_aspect_ratio button, #img2img_container_aspect_ratio button').forEach(function(elem){
-		tooltip = ar_button_titles[elem.textContent];
-		if(tooltip){
-		 	elem.title = tooltip;
-		}
-	})
+    gradioApp().querySelectorAll('#txt2img_container_aspect_ratio button, #img2img_container_aspect_ratio button').forEach(function(elem){
+	tooltip = ar_button_titles[elem.textContent];
+	    if(tooltip){
+		elem.title = tooltip;
+            }
+    })
