@@ -83,12 +83,12 @@ After installation of the Extension it could be that the web UI has to be reload
 ## Related Tools
 
 <p align="justify">I wrote some tools for dealing with aspect ratios. These tool can be find at 
-  <a href="https://github.com/zentrocdot/artificial-intelligence-tools/tree/main/misc">Aspect Ratio Tools</a>.
+<a href="https://github.com/zentrocdot/artificial-intelligence-tools/tree/main/misc">Aspect Ratio Tools</a>.
 </p>
 
 ## To-Do
 
-Nothing to-do yet.
+<p align="justify">The code of the <i>Extension</i> needs to be sanitized and optimised. The reason is simple, as I have used existing concepts and approaches.  </p>
 
 # References
 
