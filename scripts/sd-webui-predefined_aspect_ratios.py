@@ -31,6 +31,8 @@ class AspectRatioScript(scripts.Script):
         return scripts.AlwaysVisible
 
     def ui(self, is_img2img):
+        self.aspect_ratios = (1.0, 3/2, 4/3, 16/9)
+        self.aspect_ratio_labels = ("1:1", "3:2", "4:3", "16:9")
         with gr.Column(
             elem_id=f'{"img" if is_img2img else "txt"}2img_container_aspect_ratio'
         ):
@@ -41,8 +43,6 @@ class AspectRatioScript(scripts.Script):
                     visible=True,
                     elem_id="arc_empty_space",
                 )
-                self.aspect_ratios = [1.0, 3/2, 4/3, 16/9]
-                self.aspect_ratio_labels = ["1:1", "3:2", "4:3", "16:9"]
                 # Aspect ratio buttons.
                 btns = [
                     ARButton(ar=ar, value=label)
