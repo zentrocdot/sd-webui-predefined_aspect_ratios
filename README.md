@@ -96,8 +96,10 @@ After installation of the Extension it could be that the web UI has to be reload
 
 ## Collection of Other Aspect Ratios
 
+* 1,3:1
 * 1,33:1
 * 1,37:1
+* 1,41:1
 * 1,59:1
 * 1,66:1
 * 1,78:1
@@ -109,7 +111,14 @@ After installation of the Extension it could be that the web UI has to be reload
 * 2.35:1 to 2.66:1
 * 2,75:1 
 * 2,76:1
+* 3.5:1 = 32:9
+* 3.6:1 = 18:5
 * 4:1
+* 12:1
+* 18:9
+* 19,5:9
+* 20:9
+* 36:10
 
 The previous list does not claim to be complete.  
 
