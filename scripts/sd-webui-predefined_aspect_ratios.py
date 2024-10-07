@@ -41,14 +41,14 @@ class AspectRatioScript(scripts.Script):
             ):
                 gr.HTML(
                     visible=True,
-                    elem_id="arc_empty_space",
+                    elem_id="arc_empty_space"
                 )
                 # Aspect ratio buttons.
                 btns = [
                     ARButton(ar=ar, value=label)
                     for ar, label in zip(
                         self.aspect_ratios,
-                        self.aspect_ratio_labels,
+                        self.aspect_ratio_labels
                     )
                 ]
                 with contextlib.suppress(AttributeError):
@@ -60,7 +60,7 @@ class AspectRatioScript(scripts.Script):
                         b.click(
                             b.apply,
                             inputs=resolution,
-                            outputs=resolution,
+                            outputs=resolution
                         )
                         print(b) 
             # Dummy components needed for JS function
