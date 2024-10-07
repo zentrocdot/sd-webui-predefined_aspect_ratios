@@ -5,12 +5,6 @@ from pathlib import Path
 from modules.ui_components import ToolButton
 from math import gcd
 
-#aspect_ratios_dir = scripts.basedir()
-
-#switch_values_symbol = "\U000021C5"
-#get_dimensions_symbol = "\u2B07\ufe0f"
-#get_image_dimensions_symbol = "\U0001F5BC"
-
 class ARButton(ToolButton):
     def __init__(self, ar=1.0, **kwargs):
         super().__init__(**kwargs)
@@ -26,8 +20,8 @@ class ARButton(ToolButton):
             w, h = min_dim, min_dim
         return list(map(round, [w, h]))
 
-    def reset(self, w, h):
-        return [self.res, self.res]
+    #def reset(self, w, h):
+    #    return [self.res, self.res]
 
 class AspectRatioScript(scripts.Script):
     def title(self):
