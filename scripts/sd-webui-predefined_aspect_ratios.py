@@ -81,7 +81,7 @@ class AspectRatioScript(scripts.Script):
                             inputs=resolution,
                             outputs=resolution
                         )
-                        with gr.Row(
+            with gr.Row(
                 elem_id=f'{"img" if is_img2img else "txt"}2img_row_aspect_ratio'
             ):
                 # Aspect ratio buttons.
