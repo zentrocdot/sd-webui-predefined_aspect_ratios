@@ -16,7 +16,7 @@ Following aspect ratios are implemented:
 
 * 1:1 → 512 x 512 pixel
 
-Orientation Landscape
+**Orientation Landscape**
 
 * 2:1 → 1024 x 512 pixel → (Factor 2) 
 
@@ -40,7 +40,7 @@ Orientation Landscape
 
 * 16:10 → 819 x 512 pixel → (Factor 1,599609375) 
 
-### Orientation Portrait
+**Orientation Portrait**
 
 * 1:2 → 512 x 1024 pixel → (Factor 0.5) 
 
