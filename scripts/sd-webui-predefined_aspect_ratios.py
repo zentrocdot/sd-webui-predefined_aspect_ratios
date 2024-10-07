@@ -7,11 +7,13 @@
 # pylint: disable=import-error
 # pylint: disable=consider-using-from-import
 
+# Import the Python modules.
 import contextlib
 import gradio as gr
 import modules.scripts as scripts
 from modules.ui_components import ToolButton
 
+# Define class ARButton.
 class ARButton(ToolButton):
     '''Class for calculating the new Width and new Height for
        use in the web UI from the chosen aspect ratio.
@@ -44,6 +46,7 @@ class ARButton(ToolButton):
         '''Class method reset.'''
         return [self.res, self.res]
 
+# Define class AspectRatioScript.
 class AspectRatioScript(scripts.Script):
     '''Class for selecting the aspect ratio.'''
     def __init__(self, ar=1.0, **kwargs):
