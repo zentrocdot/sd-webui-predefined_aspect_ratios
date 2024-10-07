@@ -11,9 +11,9 @@ class ARButton(ToolButton):
         self.ar = ar
 
     def apply(self, w, h):
-        if self.ar > 1.0:  # fix height, change width
+        if self.ar > 1.0:  # fixed height, change width
             w = self.ar * h
-        elif self.ar < 1.0:  # fix width, change height
+        elif self.ar < 1.0:  # fixed width, change height
             h = w / self.ar
         else:  # set minimum dimension to both
             min_dim = min([w, h])
@@ -39,10 +39,10 @@ class AspectRatioScript(scripts.Script):
             with gr.Row(
                 elem_id=f'{"img" if is_img2img else "txt"}2img_row_aspect_ratio'
             ):
-                gr.HTML(
-                    visible=True,
-                    elem_id="arc_empty_space"
-                )
+                #gr.HTML(
+                #    visible=True,
+                #    elem_id="arc_empty_space"
+                #)
                 # Aspect ratio buttons.
                 btns = [
                     ARButton(ar=ar, value=label)
