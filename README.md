@@ -94,6 +94,25 @@ After installation of the Extension it could be that the web UI has to be reload
 
 <p align="justify">The code of the <i>Extension</i> needs to be sanitized and optimised. The reason is simple, as I have used existing concepts and approaches.  </p>
 
+## Collection of Other Aspect Ratios
+
+* 1,33:1
+* 1,37:1
+* 1,59:1
+* 1,66:1
+* 1,78:1
+* 1,85:1
+* 2,35:1
+* 2,39:1
+* 2,40:1
+* 2.59:1 to 2.65:1
+* 2.35:1 to 2.66:1
+* 2,75:1 
+* 2,76:1
+* 4:1
+
+The previous list does not claim to be complete.  
+
 # References
 
 [1] https://github.com/AUTOMATIC1111/stable-diffusion-webui
