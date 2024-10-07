@@ -79,6 +79,28 @@ class AspectRatioScript(scripts.Script):
                             inputs=resolution,
                             outputs=resolution
                         )
+                        with gr.Row(
+                elem_id=f'{"img" if is_img2img else "txt"}2img_row_aspect_ratio'
+            ):
+                # Aspect ratio buttons.
+                btns = [
+                    ARButton(ar=ar, value=label)
+                    for ar, label in zip(
+                        self.aspect_ratios,
+                        self.aspect_ratio_labels
+                    )
+                ]
+                with contextlib.suppress(AttributeError):
+                    for b in btns:
+                        if is_img2img:
+                            resolution = [self.i2i_w, self.i2i_h]
+                        else:
+                            resolution = [self.t2i_w, self.t2i_h]
+                        b.click(
+                            b.apply,
+                            inputs=resolution,
+                            outputs=resolution
+                        )
             
     # User defined function after_component()
     def after_component(self, component, **kwargs):
