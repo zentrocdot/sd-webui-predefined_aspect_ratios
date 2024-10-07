@@ -1,3 +1,5 @@
+# pylint: disable=invalid-name
+
 import contextlib
 import gradio as gr
 import modules.scripts as scripts
