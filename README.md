@@ -80,6 +80,12 @@ After installation one will find a button panel within the web UI.
 
 After installation of the Extension it could be that the web UI has to be reloaded from the browser that the Extension can be used.
 
+## Related Tools
+
+<p align="justify">I wrote some tools for dealing with aspect ratios. They can be find at 
+  <a href="https://github.com/zentrocdot/artificial-intelligence-tools/tree/main/misc">Aspect Ratio Tools</a>.
+</p>
+
 ## To-Do
 
 Nothing to-do yet.
@@ -95,6 +101,8 @@ Nothing to-do yet.
 [4] https://github.com/altoiddealer/--sd-webui-ar-plusplus
 
 [5] https://github.com/xhoxye/sd-webui-ar_xhox
+
+[6] https://github.com/zentrocdot/artificial-intelligence-tools/tree/main/misc
 
 
 
