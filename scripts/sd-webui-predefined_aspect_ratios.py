@@ -54,8 +54,8 @@ class ARButton(ToolButton):
 class AspectRatioScript(scripts.Script):
     '''Class for selecting the aspect ratio.'''
     def __init__(self, ar=1.0, **kwargs):
-        self.ar_value_reset = (1.0)
-        self.ar_label_reset = ("1:1")
+        #self.ar_value_reset = (1.0)
+        #self.ar_label_reset = ("1:1")
         self.ar_values_0 = (2.0, 3/2, 4/3, 5/3, 5/4, 6/5,
                             7/5, 14/9, 15/9, 16/9, 16/10)
         self.ar_values_1 = (0.5, 2/3, 3/4, 3/5, 4/5, 5/6,
@@ -80,28 +80,28 @@ class AspectRatioScript(scripts.Script):
             elem_id=f'{"img" if is_img2img else "txt"}2img_container_aspect_ratio'
         ):
             # Loop over the row 0.
-            with gr.Row(
-                elem_id=f'{"img" if is_img2img else "txt"}2img_row_aspect_ratio'
-            ):
-                # Aspect ratio buttons line 0.
-                btns = [
-                    ARButton(ar=ar, value=label)
-                    for ar, label in zip(
-                        self.ar_value_reset,
-                        self.ar_label_reset
-                    )
-                ]
-                with contextlib.suppress(AttributeError):
-                    for b in btns:
-                        if is_img2img:
-                            resolution = [self.i2i_w, self.i2i_h]
-                        else:
-                            resolution = [self.t2i_w, self.t2i_h]
-                        b.click(
-                            b.apply,
-                            inputs=resolution,
-                            outputs=resolution
-                        )
+            #with gr.Row(
+            #    elem_id=f'{"img" if is_img2img else "txt"}2img_row_aspect_ratio'
+            #):
+            #    # Aspect ratio buttons line 0.
+            #    btns = [
+            #        ARButton(ar=ar, value=label)
+            #        for ar, label in zip(
+            #            self.ar_value_reset,
+            #            self.ar_label_reset
+            #       )
+            #    ]
+            #    with contextlib.suppress(AttributeError):
+            #        for b in btns:
+            #            if is_img2img:
+            #                resolution = [self.i2i_w, self.i2i_h]
+            #            else:
+            #                resolution = [self.t2i_w, self.t2i_h]
+            #            b.click(
+            #                b.apply,
+            #                inputs=resolution,
+            #                outputs=resolution
+            #            )
             # Loop over the row 1.
             with gr.Row(
                 elem_id=f'{"img" if is_img2img else "txt"}2img_row_aspect_ratio'
