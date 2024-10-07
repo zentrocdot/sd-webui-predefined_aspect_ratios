@@ -76,7 +76,7 @@
 
 ## What the Extension Does
 
-After installation one will find a button panel within the web UI.
+After installation one will find a button panel within the web UI which looks like the next one.
 
 <a target="_blank" href=""><img src="button_panel_new.png" alt="button panel"></a>
 
