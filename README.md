@@ -6,11 +6,17 @@
 
 <p align="justify">The existing solutions [3,4,5] were much to complex for my personal needs. I have therefore decided to use this case to programme an <i>Extension</i> for learning purposes. The result of my first efforts can be found here. The presented version does nothing else, than adding a panel with predefined aspect ratios to the web UI. The predefined <i>aspect ratios</i> cover the most common ones in use.</p>
 
+## User Case
+
+<p align="justify">The <i>Extension</i> was developed for use with SD 1.5. The assumptions subsequently presented are basses on my experiences with AUTOMATIC1111 and SD 1.5. As technology is constantly advancing, there is no guarantee that these assumptions will hold in the long term.</p>
+
+## Assumptions
+
+<p align="justify">There are one rule when creating AI images, which is crucial. A Ai generated immage should be as small as possible. But, the resolution for the image to be created should not be smaller than 512 pixel in one of the both possible directions. For the <i>Extension</i> one resolution is all the time 512 pixel. The quotient of the divison from the chosen aspect ratio may be a floating point number. Height or witdth my be rounded values.</p>
+
 ## Selector Buttons for Predefined Aspect Ratios
 
-<p align="justify">The base resolution is 512 pixel. This is the lowest values, which will be calculated. Minimal value of height or width is 512 pixel.</p>
-
-Following aspect ratios are implemented:
+<p align="justify">Following aspect ratios are implemented:</p>
 
 **No specific Orientation**
 
