@@ -30,7 +30,7 @@ class ARButton(ToolButton):
 
     def apply(self, w, h):
         '''Class method apply.
-           **kwargs can be exchanged later on by h, w
+           w, h are not in use yet
         '''
         # Initialise height and width.
         w = 512
