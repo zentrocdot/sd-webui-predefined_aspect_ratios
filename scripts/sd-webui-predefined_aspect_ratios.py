@@ -82,6 +82,12 @@ class AspectRatioScript(scripts.Script):
                    "4:3, 4/3 # Set width based on 4:3 ratio to height\n",
                    "16:9, 16/9 # Set width based on 16:9 ratio to height",
                 ]
+                self.aspect_ratio_labels = [
+                   "1:1",
+                   "3:2",
+                   "4:3",
+                   "16:9",
+                ]
                 btns = [
                     ARButton(ar=ar, value=label)
                     for ar, label in zip(
