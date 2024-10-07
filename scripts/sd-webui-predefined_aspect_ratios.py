@@ -8,7 +8,7 @@ from modules.ui_components import ToolButton
 
 from math import gcd
 
-#aspect_ratios_dir = scripts.basedir()
+aspect_ratios_dir = scripts.basedir()
 
 calculator_symbol = "\U0001F5A9"
 switch_values_symbol = "\U000021C5"
