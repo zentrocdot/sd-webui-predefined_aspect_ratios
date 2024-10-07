@@ -10,18 +10,18 @@ from math import gcd
 
 aspect_ratios_dir = scripts.basedir()
 
-calculator_symbol = "\U0001F5A9"
+#calculator_symbol = "\U0001F5A9"
 switch_values_symbol = "\U000021C5"
 get_dimensions_symbol = "\u2B07\ufe0f"
 get_image_dimensions_symbol = "\U0001F5BC"
 
-class ResButton(ToolButton):
-    def __init__(self, res=(512, 512), **kwargs):
-        super().__init__(**kwargs)
-        self.w, self.h = res
-
-    def reset(self):
-        return [self.w, self.h]
+#class ResButton(ToolButton):
+#    def __init__(self, res=(512, 512), **kwargs):
+#        super().__init__(**kwargs)
+#        self.w, self.h = res
+#
+#    def reset(self):
+#        return [self.w, self.h]
 
 class ARButton(ToolButton):
     def __init__(self, ar=1.0, **kwargs):
@@ -44,7 +44,7 @@ class ARButton(ToolButton):
 def write_js_titles_file(button_titles):
     filename = Path(aspect_ratios_dir, "javascript", "button_titles.js")
     content = [
-        "// Do not put custom titles here. This file is overwritten each time the WebUI is started.\n"
+        "// Do not put custom titles here. This file is overwritten each time the web UI is started.\n"
     ]
     content.append("ar_button_titles = {\n")
     counter = 0
@@ -75,7 +75,7 @@ class AspectRatioScript(scripts.Script):
                     visible=True,
                     elem_id="arc_empty_space",
                 )
-                # Aspect Ratio buttons
+                
                 self.aspect_ratios = [
                    "1:1, 1.0 # 1:1 ratio based on minimum dimension\n",
                    "3:2, 3/2 # Set width based on 3:2 ratio to height\n",
@@ -90,6 +90,7 @@ class AspectRatioScript(scripts.Script):
                 ]
                 self.res = ["512,512", "512,768"]
                 self.res_labels = ["512,512", "512,768"]
+                # Aspect Ratio buttons
                 btns = [
                     ARButton(ar=ar, value=label)
                     for ar, label in zip(
@@ -108,23 +109,23 @@ class AspectRatioScript(scripts.Script):
                             inputs=resolution,
                             outputs=resolution,
                         )
-            with gr.Row(
-                elem_id=f'{"img" if is_img2img else "txt"}2img_row_resolutions'
-            ):
-                btns = [
-                    ResButton(res=res, value=label)
-                    for res, label in zip(self.res, self.res_labels)
-                ]
-                with contextlib.suppress(AttributeError):
-                    for b in btns:
-                        if is_img2img:
-                            resolution = [self.i2i_w, self.i2i_h]
-                        else:
-                            resolution = [self.t2i_w, self.t2i_h]
-                        b.click(
-                            b.reset,
-                            outputs=resolution,
-                        )
+            #with gr.Row(
+            #    elem_id=f'{"img" if is_img2img else "txt"}2img_row_resolutions'
+            #):
+            #    btns = [
+            #        ResButton(res=res, value=label)
+            #        for res, label in zip(self.res, self.res_labels)
+            #    ]
+            #    with contextlib.suppress(AttributeError):
+            #        for b in btns:
+            #            if is_img2img:
+            #                resolution = [self.i2i_w, self.i2i_h]
+            #            else:
+            #                resolution = [self.t2i_w, self.t2i_h]
+            #            b.click(
+            #                b.reset,
+            #                outputs=resolution,
+            #            )
             # Write button_titles.js with labels and comments read from aspect ratios and resolutions files
             button_titles = [self.aspect_ratio_labels + self.res_labels]
             button_titles.append(self.aspect_ratio_comments + self.res_comments)
