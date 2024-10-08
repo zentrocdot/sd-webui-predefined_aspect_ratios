@@ -24,13 +24,13 @@ _width = 512
 _height = 512
 
 # Define private values and labels for landscape orientation.
-_ar_values_0 = (2/1, 3/1, 4/1, 3/2, 4/3, 5/3, 5/4, 6/5,
-                7/5, 14/9, 15/9, 16/9, 16/10)
+_ar_values_0 = (2/1, 3/1, 4/1, 3/2, 4/3, 5/3, 5/4,
+                6/5, 7/5, 14/9, 15/9, 16/9, 16/10)
 _ar_labels_0 = ("2:1", "3:1", "4:1", "3:2", "4:3", "5:3", "5:4",
                 "6:5", "7:5", "14:9", "15:9", "16:9", "16:10")
 # Define private values and labels for portrait orientation.
-_ar_values_1 = (0.5, 1/3, 1/4, 2/3, 3/4, 3/5, 4/5, 5/6,
-                5/7, 9/14, 9/15, 9/16, 10/16)
+_ar_values_1 = (0.5, 1/3, 1/4, 2/3, 3/4, 3/5, 4/5,
+                5/6, 5/7, 9/14, 9/15, 9/16, 10/16)
 _ar_labels_1 = ("1:2", "1:3", "1:4", "2:3", "3:4", "3:5", "4:5",
                 "5:6", "5:7", "9:14", "9:15", "9:16", "10:16")
 
@@ -40,15 +40,17 @@ class AspectRatioButton(ToolButton):
        use in the web UI from the chosen Aspect Ratio.
     '''
     def __init__(self, ar=1.0, **kwargs):
-        '''Class init method.'''
+        '''Class method __init__.'''
         super().__init__(**kwargs)
         self.ar = ar
 
     def apply(self, wx, hy):
         '''Class method apply.
            wx, hy are not in use yet.
+           wx and hy are the values, which are currently 
+           selected in the web UI.
         '''
-        # Initialise height and width.
+        # Initialise width and height using the private variables.
         w = _width
         h = _height
         # Calculate new width and height.
@@ -56,7 +58,7 @@ class AspectRatioButton(ToolButton):
             w = self.ar * h
         elif self.ar < 1.0:  # fixed width, change height
             h = w / self.ar
-        else:  # set minimum dimension to both
+        else:  # set minimum dimension to both variables
             min_dim = min([w, h])
             w, h = min_dim, min_dim
         # Create a new list.
@@ -155,13 +157,13 @@ class AspectRatioScript(scripts.Script):
                     with contextlib.suppress(AttributeError):
                         for b in btns:
                             if is_img2img:
-                                resolution = [self.i2i_w, self.i2i_h]
+                                imgres = [self.i2i_w, self.i2i_h]
                             else:
-                                resolution = [self.t2i_w, self.t2i_h]
+                                imgres = [self.t2i_w, self.t2i_h]
                             b.click(
                                 b.apply,
-                                inputs=resolution,
-                                outputs=resolution
+                                inputs=imgres,
+                                outputs=imgres
                             )
     
     # Class method after_component.
