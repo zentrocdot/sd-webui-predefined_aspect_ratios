@@ -108,17 +108,24 @@ After installation of the Extension it could be that the web UI has to be reload
 * 1.37:1
 * 1.41:1
 * 1.59:1
+* 1.60:1 = 16:10
 * 1.66:1
+* 1.77:1 = 16:9
 * 1.78:1
 * 1.85:1
 * 2.35:1
+* 2.37:1
+* 2.38:1
 * 2.39:1
 * 2.40:1
 * 2.59:1 to 2.65:1
 * 2.35:1 to 2.66:1
 * 2.75:1 
 * 2.76:1
+* 3.2:1
 * 3.5:1 = 32:9
+* 3.55:1
+* 3.58:1
 * 3.6:1 = 18:5
 * 12:5
 * 18:5
@@ -145,6 +152,3 @@ The previous list does not claim to be complete.
 [5] https://github.com/xhoxye/sd-webui-ar_xhox
 
 [6] https://github.com/zentrocdot/artificial-intelligence-tools/tree/main/misc
-
-
-
