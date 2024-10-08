@@ -27,6 +27,8 @@
 * 2:1 → 1024 x 512 pixel → (Factor 2)
   
 * 3:1 → 1536 x 512 pixel → (Factor 3)
+  
+* 4:1 → 2048 x 512 pixel → (Factor 4)
 
 * 3:2 → 768 x 512 pixel → (Factor 1.5)
 
@@ -53,6 +55,8 @@
 * 1:2 → 512 x 1024 pixel → (Factor 0.5)
 
 * 1:3 → 512 x 1536 pixel → (Factor 0,333333333)
+
+* 1:4 → 512 x 2048 pixel → (Factor 0,25)
 
 * 2:3 → 512 x 768 pixel → (Factor 0,666666667)
 
