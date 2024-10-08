@@ -1,23 +1,18 @@
 {
-    "name": "Extension_Name",
-    "url": "https://github.com/OWNER/REPO.git",
-    "description": "Extension_Description",
+    "name": "sd-webui-predefined_aspect_ratios",
+    "url": "https://github.com/zentrocdot/sd-webui-predefined_aspect_ratios.git",
+    "description": "Extension for stable-diffusion-webui adding image aspect ratio resolutions selector buttons.",
     "tags": [
         "script",
-        "localization",
         "tab",
         "dropdown",
         "ads",
-        "training",
         "models",
         "UI related",
         "prompting",
         "editing",
         "manipulations",
         "online",
-        "animation",
-        "query",
-        "science",
         "extras"
     ]
 }
