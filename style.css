@@ -10,12 +10,12 @@
 #txt2img_row_aspect_ratio,
 #img2img_row_aspect_ratio {
 	margin: 2px;
-	gap: 10px;
+	gap: 8px;
 }
 
 #txt2img_row_aspect_ratio button,
 #img2img_row_aspect_ratio button {
 	margin: 0px;
-	gap: 10px !important;
+	gap: 8px !important;
 	max-width: unset !important;
 }
