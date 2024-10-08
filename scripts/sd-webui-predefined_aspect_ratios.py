@@ -111,8 +111,7 @@ class AspectRatioScript(scripts.Script):
                         AspectRatioButton(ar=ar, value=label)
                         for ar, label in zip(
                             _ar_values_0,
-                            _ar_labels_0
-                          
+                            _ar_labels_0   
                         )
                     ]
                     with contextlib.suppress(AttributeError):
