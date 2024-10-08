@@ -23,15 +23,16 @@ from modules.ui_components import ToolButton
 _width = 512
 _height = 512
 
-# Define module tuples.
-_arvalues0 = (1.0, 2.0, 3/2, 4/3, 5/3, 5/4, 6/5,
-              7/5, 14/9, 15/9, 16/9, 16/10)
-_arlabels0 = ("1:1", "2:1", "3:2", "4:3", "5:3", "5:4", "6:5",
-              "7:5", "14:9", "15:9", "16:9", "16:10")
-_arvalues1 = (1.0, 0.5, 2/3, 3/4, 3/5, 4/5, 5/6,
-              5/7, 9/14, 9/15, 9/16, 10/16)
-_arlabels1 = ("1:1", "1:2", "2:3", "3:4", "3:5", "4:5", "5:6",
-              "5:7", "9:14", "9:15", "9:16", "10:16")
+# Define private values and labels for landscape orientation.
+_ar_values_0 = (2/1, 3/1, 4/1, 3/2, 4/3, 5/3, 5/4, 6/5,
+                7/5, 14/9, 15/9, 16/9, 16/10)
+_ar_labels_0 = ("2:1", "3:1", "4:1", "3:2", "4:3", "5:3", "5:4",
+                "6:5", "7:5", "14:9", "15:9", "16:9", "16:10")
+# Define private values and labels for portrait orientation.
+_ar_values_1 = (0.5, 1/3, 1/4, 2/3, 3/4, 3/5, 4/5, 5/6,
+                5/7, 9/14, 9/15, 9/16, 10/16)
+_ar_labels_1 = ("1:2", "1:3", "1:4", "2:3", "3:4", "3:5", "4:5",
+                "5:6", "5:7", "9:14", "9:15", "9:16", "10:16")
 
 # Define class AspectRatioButton.
 class AspectRatioButton(ToolButton):
@@ -65,7 +66,7 @@ class AspectRatioButton(ToolButton):
 
 # Define class AspectRatioScript.
 class AspectRatioScript(scripts.Script):
-    '''Class for selecting the aspect ratio.'''
+    '''Class for selecting the aspect ratio.
     def __init__(self, ar=1.0, **kwargs):
         # Define values and labels for landscape orientation.
         self.ar_values_0 = (2/1, 3/1, 3/2, 4/3, 5/3, 5/4, 6/5,
@@ -77,6 +78,7 @@ class AspectRatioScript(scripts.Script):
                             5/7, 9/14, 9/15, 9/16, 10/16)
         self.ar_labels_1 = ("1:2", "1:3", "2:3", "3:4", "3:5", "4:5", "5:6",
                             "5:7", "9:14", "9:15", "9:16", "10:16")
+      '''
     
     def title(self):
         '''Class method title.'''
@@ -118,8 +120,11 @@ class AspectRatioScript(scripts.Script):
                     btns = [
                         AspectRatioButton(ar=ar, value=label)
                         for ar, label in zip(
-                            self.ar_values_0,
-                            self.ar_labels_0
+                            #self.ar_values_0,
+                            #self.ar_labels_0
+                            _ar_values_0,
+                            _ar_labels_0
+                          
                         )
                     ]
                     with contextlib.suppress(AttributeError):
@@ -141,8 +146,10 @@ class AspectRatioScript(scripts.Script):
                     btns = [
                         AspectRatioButton(ar=ar, value=label)
                         for ar, label in zip(
-                            self.ar_values_1,
-                            self.ar_labels_1
+                            #self.ar_values_1,
+                            #self.ar_labels_1
+                            _ar_values_1,
+                            _ar_labels_1
                         )
                     ]
                     with contextlib.suppress(AttributeError):
