@@ -4,15 +4,8 @@
     "description": "Extension for stable-diffusion-webui adding image aspect ratio resolutions selector buttons.",
     "tags": [
         "script",
-        "tab",
-        "dropdown",
         "ads",
-        "models",
         "UI related",
-        "prompting",
-        "editing",
-        "manipulations",
-        "online",
         "extras"
     ]
 }
