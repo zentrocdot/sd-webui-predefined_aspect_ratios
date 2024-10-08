@@ -19,6 +19,20 @@ import gradio as gr
 import modules.scripts as scripts
 from modules.ui_components import ToolButton
 
+# Define module variables.
+_width = 512
+_height = 512
+
+# Define module tuples.
+_arvalues0 = (1.0, 2.0, 3/2, 4/3, 5/3, 5/4, 6/5,
+              7/5, 14/9, 15/9, 16/9, 16/10)
+_arlabels0 = ("1:1", "2:1", "3:2", "4:3", "5:3", "5:4", "6:5",
+              "7:5", "14:9", "15:9", "16:9", "16:10")
+_arvalues1 = (1.0, 0.5, 2/3, 3/4, 3/5, 4/5, 5/6,
+              5/7, 9/14, 9/15, 9/16, 10/16)
+_arlabels1 = ("1:1", "1:2", "2:3", "3:4", "3:5", "4:5", "5:6",
+              "5:7", "9:14", "9:15", "9:16", "10:16")
+
 # Define class ARButton.
 class ARButton(ToolButton):
     '''Class for calculating the new Width and new Height for
