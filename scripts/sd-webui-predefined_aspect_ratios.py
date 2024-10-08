@@ -45,7 +45,7 @@ class AspectRatioButton(ToolButton):
 
     def apply(self, wx, hy):
         '''Class method apply.
-        
+
            Arguments wx, hy are not in use yet.
            wx and hy are the values, which are
            currently selected in the web UI.
@@ -69,7 +69,7 @@ class AspectRatioButton(ToolButton):
 # Define class AspectRatioScript.
 class AspectRatioScript(scripts.Script):
     '''Class for selecting the aspect ratio.'''
-    
+
     def title(self):
         '''Class method title.'''
         return "Aspect Ratio Selector"
