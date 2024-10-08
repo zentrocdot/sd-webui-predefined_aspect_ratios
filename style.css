@@ -1,21 +1,23 @@
 #txt2img_container_aspect_ratio,
 #img2img_container_aspect_ratio {
-	gap: 8px !important;
+	padding: 0px; 
+	gap: 6px !important;
 	margin: 0px;
 	margin-top: 6px;
-	margin-bottom: 6px;
-	padding: 0px;  
+	margin-bottom: 6px; 
 }
 
 #txt2img_row_aspect_ratio,
 #img2img_row_aspect_ratio {
-	margin: 2px;
+	padding: 0px;
 	gap: 6px;
+	margin: 2px;	
 }
 
 #txt2img_row_aspect_ratio button,
 #img2img_row_aspect_ratio button {
-	margin: 0px;
+	padding: 0px;
 	gap: 6px !important;
+	margin: 0px;
 	max-width: unset !important;
 }
