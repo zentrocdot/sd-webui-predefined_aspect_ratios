@@ -167,7 +167,7 @@ class AspectRatioScript(scripts.Script):
             self.i2i_h = component
         # Third if block.
         if kwargs.get("elem_id") == "img2img_image":
-            self.image = [component] 
+            self.image = [component]
         if kwargs.get("elem_id") == "img2img_sketch":
             self.image.append(component)
         if kwargs.get("elem_id") == "img2maskimg":
