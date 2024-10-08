@@ -46,9 +46,10 @@ class AspectRatioButton(ToolButton):
 
     def apply(self, wx, hy):
         '''Class method apply.
-           wx, hy are not in use yet.
-           wx and hy are the values, which are currently 
-           selected in the web UI.
+        
+           Arguments wx, hy are not in use yet.
+           wx and hy are the values, which are
+           currently selected in the web UI.
         '''
         # Initialise width and height using the private variables.
         w = _width
@@ -68,19 +69,7 @@ class AspectRatioButton(ToolButton):
 
 # Define class AspectRatioScript.
 class AspectRatioScript(scripts.Script):
-    '''Class for selecting the aspect ratio.
-    def __init__(self, ar=1.0, **kwargs):
-        # Define values and labels for landscape orientation.
-        self.ar_values_0 = (2/1, 3/1, 3/2, 4/3, 5/3, 5/4, 6/5,
-                            7/5, 14/9, 15/9, 16/9, 16/10)
-        self.ar_labels_0 = ("2:1", "3:1", "3:2", "4:3", "5:3", "5:4", "6:5",
-                            "7:5", "14:9", "15:9", "16:9", "16:10")
-        # Define values and labels for portrait orientation.
-        self.ar_values_1 = (0.5, 1/3, 2/3, 3/4, 3/5, 4/5, 5/6,
-                            5/7, 9/14, 9/15, 9/16, 10/16)
-        self.ar_labels_1 = ("1:2", "1:3", "2:3", "3:4", "3:5", "4:5", "5:6",
-                            "5:7", "9:14", "9:15", "9:16", "10:16")
-      '''
+    '''Class for selecting the aspect ratio.'''
     
     def title(self):
         '''Class method title.'''
@@ -92,12 +81,12 @@ class AspectRatioScript(scripts.Script):
 
     def ui(self, is_img2img):
         '''Class method ui.'''
-        # Loop over the columns.
+        # Loop over the column.
         with gr.Column(
             elem_id=f'{"img" if is_img2img else "txt"}2img_container_aspect_ratio'
         ):
             with gr.Accordion(open=True, label='Predefined Aspect Ratios', visible=True): 
-                # Loop over the row 0.
+                # Nested loop over row 0.
                 with gr.Row(
                     elem_id=f'{"img" if is_img2img else "txt"}2img_row_aspect_ratio'
                 ):
@@ -106,15 +95,15 @@ class AspectRatioScript(scripts.Script):
                     with contextlib.suppress(AttributeError):
                         for b in btns:
                             if is_img2img:
-                                resolution = [self.i2i_w, self.i2i_h]
+                                imgres = [self.i2i_w, self.i2i_h]
                             else:
-                                resolution = [self.t2i_w, self.t2i_h]
+                                imgres = [self.t2i_w, self.t2i_h]
                             b.click(
                                 b.apply,
-                                inputs=resolution,
-                                outputs=resolution
+                                inputs=imgres,
+                                outputs=imgres
                             )
-                # Loop over the row 1.
+                # Nested loop over row 1.
                 with gr.Row(
                     elem_id=f'{"img" if is_img2img else "txt"}2img_row_aspect_ratio'
                 ):
@@ -122,8 +111,6 @@ class AspectRatioScript(scripts.Script):
                     btns = [
                         AspectRatioButton(ar=ar, value=label)
                         for ar, label in zip(
-                            #self.ar_values_0,
-                            #self.ar_labels_0
                             _ar_values_0,
                             _ar_labels_0
                           
@@ -132,15 +119,15 @@ class AspectRatioScript(scripts.Script):
                     with contextlib.suppress(AttributeError):
                         for b in btns:
                             if is_img2img:
-                                resolution = [self.i2i_w, self.i2i_h]
+                                imgres = [self.i2i_w, self.i2i_h]
                             else:
-                                resolution = [self.t2i_w, self.t2i_h]
+                                imgres = [self.t2i_w, self.t2i_h]
                             b.click(
                                 b.apply,
-                                inputs=resolution,
-                                outputs=resolution
+                                inputs=imgres,
+                                outputs=imgres
                             )
-                # Loop over the row 2.
+                # Nested loop over row 2.
                 with gr.Row(
                     elem_id=f'{"img" if is_img2img else "txt"}2img_row_aspect_ratio'
                 ):
@@ -148,8 +135,6 @@ class AspectRatioScript(scripts.Script):
                     btns = [
                         AspectRatioButton(ar=ar, value=label)
                         for ar, label in zip(
-                            #self.ar_values_1,
-                            #self.ar_labels_1
                             _ar_values_1,
                             _ar_labels_1
                         )
@@ -168,7 +153,10 @@ class AspectRatioScript(scripts.Script):
     
     # Class method after_component.
     def after_component(self, component, **kwargs):
-        '''Class method after_component.'''
+        '''Class method after_component.
+
+           The if entries are sorted by web UI feature.
+        '''
         # First if block.
         if kwargs.get("elem_id") == "txt2img_width":
             self.t2i_w = component
