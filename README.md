@@ -117,7 +117,6 @@ After installation of the Extension it could be that the web UI has to be reload
 * 2,76:1
 * 3.5:1 = 32:9
 * 3.6:1 = 18:5
-* 4:1
 * 12:1
 * 18:9
 * 19,5:9
