@@ -8,7 +8,6 @@ Version 0.0.0.5
 # pylint: disable=attribute-defined-outside-init
 # pylint: disable=import-error
 # pylint: disable=consider-using-from-import
-# pylint: disable=trailing-whitespace
 # pylint: disable=unused-argument
 # pylint: disable=too-many-instance-attributes
 # pylint: disable=no-self-use
