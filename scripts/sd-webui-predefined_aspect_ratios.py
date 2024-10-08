@@ -84,7 +84,7 @@ class AspectRatioScript(scripts.Script):
         with gr.Column(
             elem_id=f'{"img" if is_img2img else "txt"}2img_container_aspect_ratio'
         ):
-            with gr.Accordion(open=True, label='Predefined Aspect Ratios', visible=True): 
+            with gr.Accordion(open=True, label='Predefined Aspect Ratios', visible=True):
                 # Nested loop over row 0.
                 with gr.Row(
                     elem_id=f'{"img" if is_img2img else "txt"}2img_row_aspect_ratio'
