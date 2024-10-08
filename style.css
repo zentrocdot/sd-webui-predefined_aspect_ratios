@@ -9,8 +9,8 @@
 #txt2img_row_aspect_ratio,
 #img2img_row_aspect_ratio {
 	padding: 0px;
-	gap: 0px;
-	margin: 0px;	
+	gap: 4px;
+	margin: 4px;	
 }
 
 #txt2img_row_aspect_ratio button,
