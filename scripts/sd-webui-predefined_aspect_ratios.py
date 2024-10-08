@@ -160,12 +160,12 @@ class AspectRatioScript(scripts.Script):
             self.t2i_w = component
         if kwargs.get("elem_id") == "txt2img_height":
             self.t2i_h = component
-        # Second if block.  
+        # Second if block.
         if kwargs.get("elem_id") == "img2img_width":
             self.i2i_w = component
         if kwargs.get("elem_id") == "img2img_height":
             self.i2i_h = component
-        # Third if block.  
+        # Third if block.
         if kwargs.get("elem_id") == "img2img_image":
             self.image = [component] 
         if kwargs.get("elem_id") == "img2img_sketch":
