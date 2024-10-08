@@ -82,7 +82,7 @@
 
 After installation one will find a button panel within the web UI which looks like the next one.
 
-<a target="_blank" href=""><img src="button_panel_new.png" alt="button panel"></a>
+<a target="_blank" href=""><img src="./images/button_panel_new.png" alt="button panel"></a>
 
 ## Known Problems
 
