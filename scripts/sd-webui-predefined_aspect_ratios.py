@@ -1,7 +1,9 @@
 #!/usr/bin/python3
-'''Extension for AUTOMATIC1111 called sd-webui-predefined_aspect_ratios.
-
+'''sd-webui-predefined_aspect_ratios
+Extension for AUTOMATIC1111
 Version 0.0.0.6
+
+The linter pylint was used to check the programme code.
 '''
 # pylint: disable=import-error
 # pylint: disable=consider-using-from-import
@@ -61,9 +63,9 @@ class AspectRatioButton(ToolButton):
         else:  # set minimum dimension to both variables
             min_dim = min([w, h])
             w, h = min_dim, min_dim
-        # Create a new list.
+        # Round the values of w and h and create a list.
         retlst = list(map(round, [w, h]))
-        # Return the list with width and height.
+        # Return the list with the width and the height.
         return retlst
 
 # Define class AspectRatioScript.
