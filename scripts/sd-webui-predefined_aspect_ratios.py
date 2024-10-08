@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 '''Extension for AUTOMATIC1111 called sd-webui-predefined_aspect_ratios.
 
-Version 0.0.0.4
+Version 0.0.0.5
 '''
 # pylint: disable=invalid-name
 # pylint: disable=too-few-public-methods
