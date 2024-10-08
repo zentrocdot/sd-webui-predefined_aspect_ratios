@@ -3,12 +3,13 @@
 
 Version 0.0.0.5
 '''
-# pylint: disable=invalid-name
-# pylint: disable=too-few-public-methods
-# pylint: disable=attribute-defined-outside-init
 # pylint: disable=import-error
 # pylint: disable=consider-using-from-import
-# pylint: disable=too-many-instance-attributes
+# pylint: disable=attribute-defined-outside-init
+# pylint: disable=too-few-public-methods
+# pylint: disable=no-self-use
+# pylint: disable=invalid-name
+# pylint: disable=unused-argument
 
 # Import the Python modules.
 import contextlib
