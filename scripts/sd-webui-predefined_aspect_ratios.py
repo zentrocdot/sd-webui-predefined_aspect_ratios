@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 '''Extension for AUTOMATIC1111 called sd-webui-predefined_aspect_ratios.
 
-Version 0.0.0.5
+Version 0.0.0.6
 '''
 # pylint: disable=import-error
 # pylint: disable=consider-using-from-import
@@ -26,6 +26,7 @@ _ar_values_0 = (2/1, 3/1, 4/1, 3/2, 4/3, 5/3, 5/4,
                 6/5, 7/5, 14/9, 15/9, 16/9, 16/10)
 _ar_labels_0 = ("2:1", "3:1", "4:1", "3:2", "4:3", "5:3", "5:4",
                 "6:5", "7:5", "14:9", "15:9", "16:9", "16:10")
+
 # Define private values and labels for portrait orientation.
 _ar_values_1 = (0.5, 1/3, 1/4, 2/3, 3/4, 3/5, 4/5,
                 5/6, 5/7, 9/14, 9/15, 9/16, 10/16)
