@@ -139,6 +139,7 @@ After installation of the Extension it could be that the web UI has to be reload
 * 22:9
 * 32:9
 * 36:10
+* 256:135
 
 The previous list does not claim to be complete.  
 
