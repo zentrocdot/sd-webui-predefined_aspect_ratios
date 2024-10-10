@@ -80,6 +80,14 @@ class AspectRatioScript(scripts.Script):
         '''Class method show.'''
         return scripts.AlwaysVisible
 
+    def image_resolution(self, is_img2img):
+        '''Get the image resolution.'''
+        if is_img2img:
+            imgres = [self.i2i_w, self.i2i_h]
+        else:
+            imgres = [self.t2i_w, self.t2i_h]
+        return imgres
+
     def ui(self, is_img2img):
         '''Class method ui.'''
         # Loop over the column.
@@ -95,10 +103,11 @@ class AspectRatioScript(scripts.Script):
                     btns = [AspectRatioButton(ar=1.0, value="1:1")]
                     with contextlib.suppress(AttributeError):
                         for b in btns:
-                            if is_img2img:
-                                imgres = [self.i2i_w, self.i2i_h]
-                            else:
-                                imgres = [self.t2i_w, self.t2i_h]
+                            imgres = self.image_resolution(is_img2img)
+                            #if is_img2img:
+                            #    imgres = [self.i2i_w, self.i2i_h]
+                            #else:
+                            #    imgres = [self.t2i_w, self.t2i_h]
                             b.click(
                                 b.apply,
                                 inputs=imgres,
