@@ -124,10 +124,7 @@ class AspectRatioScript(scripts.Script):
                     ]
                     with contextlib.suppress(AttributeError):
                         for b in btns:
-                            if is_img2img:
-                                imgres = [self.i2i_w, self.i2i_h]
-                            else:
-                                imgres = [self.t2i_w, self.t2i_h]
+                            imgres = self.image_resolution(is_img2img)
                             b.click(
                                 b.apply,
                                 inputs=imgres,
@@ -147,10 +144,7 @@ class AspectRatioScript(scripts.Script):
                     ]
                     with contextlib.suppress(AttributeError):
                         for b in btns:
-                            if is_img2img:
-                                imgres = [self.i2i_w, self.i2i_h]
-                            else:
-                                imgres = [self.t2i_w, self.t2i_h]
+                            imgres = self.image_resolution(is_img2img)
                             b.click(
                                 b.apply,
                                 inputs=imgres,
