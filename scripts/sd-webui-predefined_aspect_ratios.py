@@ -94,10 +94,11 @@ class AspectRatioScript(scripts.Script):
         # Set the format strings.
         css0 = f'{"img" if is_img2img else "txt"}2img_row_aspect_ratio'
         css1 = elem_id=f'{"img" if is_img2img else "txt"}2img_container_aspect_ratio'
-        # Loop over the column.
+        # Create a column.
         with gr.Column(elem_id=css1):
+            # Create an InputAccordion.
             with InputAccordion(open=True, label='Predefined Aspect Ratios', visible=True, value=False):
-                # Nested loop over row 0.
+                # Create first row.
                 with gr.Row(elem_id=css0):
                     # Aspect ratio button line 0.
                     btns = [AspectRatioButton(ar=1.0, value="1:1")]
@@ -105,7 +106,7 @@ class AspectRatioScript(scripts.Script):
                         for b in btns:
                             imgres = self.image_resolution(is_img2img)
                             b.click(b.apply, inputs=imgres, outputs=imgres)
-                # Nested loop over row 1.
+                # Create second row.
                 with gr.Row(elem_id=css0):
                     # Aspect ratio buttons line 1.
                     btns = [
@@ -119,7 +120,7 @@ class AspectRatioScript(scripts.Script):
                         for b in btns:
                             imgres = self.image_resolution(is_img2img)
                             b.click(b.apply, inputs=imgres, outputs=imgres)
-                # Nested loop over row 2.
+                # Create third row.
                 with gr.Row(elem_id=css0):
                     # Aspect ratio buttons line 2.
                     btns = [
