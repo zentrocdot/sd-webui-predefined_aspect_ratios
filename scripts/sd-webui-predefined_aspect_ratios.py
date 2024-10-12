@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 '''sd-webui-predefined_aspect_ratios
 Extension for AUTOMATIC1111
-Version 0.0.0.6
+Version 0.0.0.7
 
 The linter pylint was used to check the programme code.
 '''
@@ -25,15 +25,15 @@ _height = 512
 
 # Define private values and labels for landscape orientation.
 _ar_values_0 = (2/1, 3/1, 3/2, 4/1, 4/3, 5/3, 5/4,
-                6/5, 7/5, 12/5, 14/9, 15/9, 16/9, 16/10)
+                6/5, 7/5, 12/5, 14/9, 16/9, 16/10)
 _ar_labels_0 = ("2:1", "3:1", "3:2", "4:1", "4:3", "5:3", "5:4",
-                "6:5", "7:5", "12:5", "14:9", "15:9", "16:9", "16:10")
+                "6:5", "7:5", "12:5", "14:9", "16:9", "16:10")
 
 # Define private values and labels for portrait orientation.
 _ar_values_1 = (0.5, 1/3, 1/4, 2/3, 3/4, 3/5, 4/5,
-                5/6, 5/7, 5/12, 9/14, 9/15, 9/16, 10/16)
+                5/6, 5/7, 5/12, 9/14, 9/16, 10/16)
 _ar_labels_1 = ("1:2", "1:3", "1:4", "2:3", "3:4", "3:5", "4:5",
-                "5:6", "5:7", "5:12", "9:14", "9:15", "9:16", "10:16")
+                "5:6", "5:7", "5:12", "9:14", "9:16", "10:16")
 
 # Define class AspectRatioButton.
 class AspectRatioButton(ToolButton):
@@ -94,7 +94,7 @@ class AspectRatioScript(scripts.Script):
         with gr.Column(
             elem_id=f'{"img" if is_img2img else "txt"}2img_container_aspect_ratio'
         ):
-            with gr.Accordion(open=True, label='Predefined Aspect Ratios', visible=True):
+            with InputAccordion(open=True, label='Predefined Aspect Ratios', visible=True):
                 # Nested loop over row 0.
                 with gr.Row(
                     elem_id=f'{"img" if is_img2img else "txt"}2img_row_aspect_ratio'
@@ -104,10 +104,6 @@ class AspectRatioScript(scripts.Script):
                     with contextlib.suppress(AttributeError):
                         for b in btns:
                             imgres = self.image_resolution(is_img2img)
-                            #if is_img2img:
-                            #    imgres = [self.i2i_w, self.i2i_h]
-                            #else:
-                            #    imgres = [self.t2i_w, self.t2i_h]
                             b.click(
                                 b.apply,
                                 inputs=imgres,
@@ -166,17 +162,14 @@ class AspectRatioScript(scripts.Script):
 
            The if entries are sorted by web UI feature.
         '''
-        # First if block.
         if kwargs.get("elem_id") == "txt2img_width":
             self.t2i_w = component
         if kwargs.get("elem_id") == "txt2img_height":
             self.t2i_h = component
-        # Second if block.
         if kwargs.get("elem_id") == "img2img_width":
             self.i2i_w = component
         if kwargs.get("elem_id") == "img2img_height":
             self.i2i_h = component
-        # Third if block.
         if kwargs.get("elem_id") == "img2img_image":
             self.image = [component]
         if kwargs.get("elem_id") == "img2img_sketch":
