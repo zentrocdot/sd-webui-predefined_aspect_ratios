@@ -92,16 +92,14 @@ class AspectRatioScript(scripts.Script):
     def ui(self, is_img2img):
         '''Class method ui.'''
         # Set the format strings.
-      
+        css0 = f'{"img" if is_img2img else "txt"}2img_row_aspect_ratio'
         # Loop over the column.
         with gr.Column(
             elem_id=f'{"img" if is_img2img else "txt"}2img_container_aspect_ratio'
         ):
             with InputAccordion(open=True, label='Predefined Aspect Ratios', visible=True, value=False):
                 # Nested loop over row 0.
-                with gr.Row(
-                    elem_id=f'{"img" if is_img2img else "txt"}2img_row_aspect_ratio'
-                ):
+                with gr.Row(elem_id=css0):
                     # Aspect ratio button line 0.
                     btns = [AspectRatioButton(ar=1.0, value="1:1")]
                     with contextlib.suppress(AttributeError):
