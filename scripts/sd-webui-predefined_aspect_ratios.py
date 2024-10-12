@@ -93,6 +93,7 @@ class AspectRatioScript(scripts.Script):
         '''Class method ui.'''
         # Set the format strings.
         css0 = f'{"img" if is_img2img else "txt"}2img_row_aspect_ratio'
+        css1 = f'{"img" if is_img2img else "txt"}2img_row_aspect_ratio'
         # Loop over the column.
         with gr.Column(
             elem_id=f'{"img" if is_img2img else "txt"}2img_container_aspect_ratio'
@@ -105,15 +106,9 @@ class AspectRatioScript(scripts.Script):
                     with contextlib.suppress(AttributeError):
                         for b in btns:
                             imgres = self.image_resolution(is_img2img)
-                            b.click(
-                                b.apply,
-                                inputs=imgres,
-                                outputs=imgres
-                            )
+                            b.click(b.apply, inputs=imgres, outputs=imgres)
                 # Nested loop over row 1.
-                with gr.Row(
-                    elem_id=f'{"img" if is_img2img else "txt"}2img_row_aspect_ratio'
-                ):
+                with gr.Row(elem_id=css0):
                     # Aspect ratio buttons line 1.
                     btns = [
                         AspectRatioButton(ar=ar, value=label)
@@ -125,15 +120,9 @@ class AspectRatioScript(scripts.Script):
                     with contextlib.suppress(AttributeError):
                         for b in btns:
                             imgres = self.image_resolution(is_img2img)
-                            b.click(
-                                b.apply,
-                                inputs=imgres,
-                                outputs=imgres
-                            )
+                            b.click(b.apply, inputs=imgres, outputs=imgres)
                 # Nested loop over row 2.
-                with gr.Row(
-                    elem_id=f'{"img" if is_img2img else "txt"}2img_row_aspect_ratio'
-                ):
+                with gr.Row(elem_id=css0):
                     # Aspect ratio buttons line 2.
                     btns = [
                         AspectRatioButton(ar=ar, value=label)
@@ -145,11 +134,7 @@ class AspectRatioScript(scripts.Script):
                     with contextlib.suppress(AttributeError):
                         for b in btns:
                             imgres = self.image_resolution(is_img2img)
-                            b.click(
-                                b.apply,
-                                inputs=imgres,
-                                outputs=imgres
-                            )
+                            b.click(b.apply, inputs=imgres, outputs=imgres)
     
     # Class method after_component.
     def after_component(self, component, **kwargs):
