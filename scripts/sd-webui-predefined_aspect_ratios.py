@@ -93,11 +93,9 @@ class AspectRatioScript(scripts.Script):
         '''Class method ui.'''
         # Set the format strings.
         css0 = f'{"img" if is_img2img else "txt"}2img_row_aspect_ratio'
-        css1 = f'{"img" if is_img2img else "txt"}2img_row_aspect_ratio'
+        css1 = elem_id=f'{"img" if is_img2img else "txt"}2img_container_aspect_ratio'
         # Loop over the column.
-        with gr.Column(
-            elem_id=f'{"img" if is_img2img else "txt"}2img_container_aspect_ratio'
-        ):
+        with gr.Column(elem_id=css1):
             with InputAccordion(open=True, label='Predefined Aspect Ratios', visible=True, value=False):
                 # Nested loop over row 0.
                 with gr.Row(elem_id=css0):
