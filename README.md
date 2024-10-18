@@ -3,7 +3,7 @@
 
 <p align="justify">sd-webui-predefined_aspect_ratios is an <i>Extension</i> for the <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui">AUTOMATIC1111/stable-diffusion-webui</a>, which is adding buttons to the web UI for the selection of predefined <i>aspect ratios</i>.</p>
 
-deprecated -> use https://github.com/zentrocdot/sd-webui-aspect_ratios-dd
+Deprecated first extension -> I propose to use https://github.com/zentrocdot/sd-webui-aspect_ratios-dd instead.
 
 ---
 
