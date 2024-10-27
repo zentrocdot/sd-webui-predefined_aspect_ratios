@@ -25,11 +25,12 @@ _width = 512
 _height = 512
 
 # Define private values and labels for landscape orientation.
+# Obsolet per definition. Removed later on. 
 #_ar_values_0 = (2/1, 3/1, 3/2, 4/1, 4/3, 5/3, 5/4,
 #                6/5, 7/5, 8/3, 12/5, 14/9, 16/9)
+# Values and labels are organised as tuples.
 _ar_labels_0 = ("2:1", "3:1", "3:2", "4:1", "4:3", "5:3", "5:4",
                 "6:5", "7:5", "8:3", "12:5", "14:9", "16:9")
-
 _ar_values_0 = ()
 for ele in _ar_labels_0:
     try:      
@@ -40,11 +41,12 @@ for ele in _ar_labels_0:
         print("*** Could not parse: " + str(ele))  
 
 # Define private values and labels for portrait orientation.
+# Obsolet per definition. Removed later on. 
 #_ar_values_1 = (0.5, 1/3, 1/4, 2/3, 3/4, 3/5, 3/8, 4/5,
 #                5/6, 5/7, 5/12, 9/14, 9/16)
+# Values and labels are organised as tuples.
 _ar_labels_1 = ("1:2", "1:3", "1:4", "2:3", "3:4", "3:5", "3:8", "4:5",
                 "5:6", "5:7", "5:12", "9:14", "9:16")
-
 _ar_values_1 = ()
 for ele in _ar_labels_1:
     try:      
@@ -130,8 +132,7 @@ class AspectRatioScript(scripts.Script):
                     btns = [
                         AspectRatioButton(ar=ar, value=label)
                         for ar, label in zip(
-                            _ar_values_0,
-                            _ar_labels_0
+                            _ar_values_0, _ar_labels_0
                         )
                     ]
                     with contextlib.suppress(AttributeError):
@@ -144,8 +145,7 @@ class AspectRatioScript(scripts.Script):
                     btns = [
                         AspectRatioButton(ar=ar, value=label)
                         for ar, label in zip(
-                            _ar_values_1,
-                            _ar_labels_1
+                            _ar_values_1, _ar_labels_1
                         )
                     ]
                     with contextlib.suppress(AttributeError):
@@ -157,7 +157,9 @@ class AspectRatioScript(scripts.Script):
     def after_component(self, component, **kwargs):
         '''Class method after_component.
 
-           The if entries are sorted by web UI feature.
+        This method is used to generalize the existing code. It is detected if 
+        one is in the 'txt2img tab' or the 'img2img tab'. Then the corresponding
+        self variables can be used in the same code for both tabs.
         '''
         if kwargs.get("elem_id") == "txt2img_width":
             self.t2i_w = component
