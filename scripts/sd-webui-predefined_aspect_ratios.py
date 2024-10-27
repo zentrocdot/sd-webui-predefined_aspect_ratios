@@ -37,7 +37,7 @@ for ele in _ar_labels_0:
         templist = ele.split(":")
         print(templist)
         fval = float(templist[0]) / float(templist[1])       
-        _ar_values_0.append(fval)
+        _ar_values_0 = _ar_values_0 + (fval, )
     except:
         print("*** Could not parse: " + str(ele))  
 
