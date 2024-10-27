@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 '''sd-webui-predefined_aspect_ratios
 Extension for AUTOMATIC1111
-Version 0.0.0.7
+Version 0.0.0.8
 
 The linter pylint was used to check the programme code.
 '''
@@ -26,15 +26,15 @@ _height = 512
 
 # Define private values and labels for landscape orientation.
 _ar_values_0 = (2/1, 3/1, 3/2, 4/1, 4/3, 5/3, 5/4,
-                6/5, 7/5, 12/5, 14/9, 16/9, 16/10)
+                6/5, 7/5, 8/3, 12/5, 14/9, 16/9)
 _ar_labels_0 = ("2:1", "3:1", "3:2", "4:1", "4:3", "5:3", "5:4",
-                "6:5", "7:5", "12:5", "14:9", "16:9", "16:10")
+                "6:5", "7:5", "8:3", "12:5", "14:9", "16:9")
 
 # Define private values and labels for portrait orientation.
-_ar_values_1 = (0.5, 1/3, 1/4, 2/3, 3/4, 3/5, 4/5,
-                5/6, 5/7, 5/12, 9/14, 9/16, 10/16)
-_ar_labels_1 = ("1:2", "1:3", "1:4", "2:3", "3:4", "3:5", "4:5",
-                "5:6", "5:7", "5:12", "9:14", "9:16", "10:16")
+_ar_values_1 = (0.5, 1/3, 1/4, 2/3, 3/4, 3/5, 3/8, 4/5,
+                5/6, 5/7, 5/12, 9/14, 9/16)
+_ar_labels_1 = ("1:2", "1:3", "1:4", "2:3", "3:4", "3:5", "3:8", "4:5",
+                "5:6", "5:7", "5:12", "9:14", "9:16")
 
 # Define class AspectRatioButton.
 class AspectRatioButton(ToolButton):
