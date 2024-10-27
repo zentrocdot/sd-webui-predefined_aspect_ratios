@@ -100,15 +100,24 @@
 
 <i>Figure 1: Exemplary appearance of the opened extension panel</i>
 
+## Installation
+
+<p align="justify">Go to tab <b>Extensions</b>. Then go to tab <b>Install from URL</b>. Put in the ínstallation link in the text field <b>URL for extension's git repository</b>. Finally press button <b>Install</b>. Successful installation is displayed in the footer.</p>
+
+The installation link, which can be used in <i>AUTOMATIC1111</i> is as follows:
+
+```
+https://github.com/zentrocdot/sd-webui-predefined_aspect_ratios
+```
+
 ## Known Problems
 
 <p align="justify">After installation of the Extension it could be that the web UI has to be reloaded from the browser that the Extension can be used. I haven't noticed this problem recently</p>
 
 ## Related Tools
 
-<p align="justify">I wrote some tools for dealing with aspect ratios. These tool can be find at 
-<a href="https://github.com/zentrocdot/artificial-intelligence-tools/tree/main/misc">Aspect Ratio Tools</a>.
-</p>
+<p align="justify">I wrote some tools for dealing with aspect ratios. These tool can be found at 
+<a href="https://github.com/zentrocdot/artificial-intelligence-tools/tree/main/misc">Aspect Ratio Tools</a>.</p>
 
 ## To-Do
 
@@ -156,7 +165,7 @@
 * 36:10
 * 256:135
 
-The previous list does not claim to be complete. The list from Extension sd-webui-aspect_ratios-dd is more complete.
+<p align="justify">The previous list does not claim to be complete. The list from Extension sd-webui-aspect_ratios-dd is more complete.</p>
   
 # References
 
