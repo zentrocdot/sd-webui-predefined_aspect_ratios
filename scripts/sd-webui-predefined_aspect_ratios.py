@@ -33,19 +33,26 @@ _ar_labels_0 = ("2:1", "3:1", "3:2", "4:1", "4:3", "5:3", "5:4",
 _ar_values_0 = ()
 for ele in _ar_labels_0:
     try:      
-        print(ele)
         templist = ele.split(":")
-        print(templist)
         fval = float(templist[0]) / float(templist[1])       
         _ar_values_0 = _ar_values_0 + (fval, )
     except:
         print("*** Could not parse: " + str(ele))  
 
 # Define private values and labels for portrait orientation.
-_ar_values_1 = (0.5, 1/3, 1/4, 2/3, 3/4, 3/5, 3/8, 4/5,
-                5/6, 5/7, 5/12, 9/14, 9/16)
+#_ar_values_1 = (0.5, 1/3, 1/4, 2/3, 3/4, 3/5, 3/8, 4/5,
+#                5/6, 5/7, 5/12, 9/14, 9/16)
 _ar_labels_1 = ("1:2", "1:3", "1:4", "2:3", "3:4", "3:5", "3:8", "4:5",
                 "5:6", "5:7", "5:12", "9:14", "9:16")
+
+_ar_values_1 = ()
+for ele in _ar_labels_1:
+    try:      
+        templist = ele.split(":")
+        fval = float(templist[0]) / float(templist[1])       
+        _ar_values_1 = _ar_values_1 + (fval, )
+    except:
+        print("*** Could not parse: " + str(ele))  
 
 # Define class AspectRatioButton.
 class AspectRatioButton(ToolButton):
