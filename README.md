@@ -83,9 +83,18 @@
 
 * 9:16 → 512 x 910 pixel → (Factor 0,562637363)
 
+## Exception to the rule
+
+<p align="justify">The aspect ratios</p>
+
++ 8:3
++ 3:8
+
+<p align="justify">are not one of common aspect ratios. I added this both aspect ratio due to the fact, that a banner at OpenSea needs a aspect ratio of 8:3.</p>
+
 ## What the Extension Does
 
-After installation one will find a button panel within the web UI which looks like the next one.
+<p align="justify">After installation one will find a button panel within the web UI which looks like the next one.</p>
 
 <a target="_blank" href=""><img src="./images/button_panel_new.png" alt="button panel"></a>
 
