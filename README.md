@@ -166,6 +166,14 @@ https://github.com/zentrocdot/sd-webui-predefined_aspect_ratios
 * 256:135
 
 <p align="justify">The previous list does not claim to be complete. The list from Extension sd-webui-aspect_ratios-dd is more complete.</p>
+
+# Credits
+
+<p align="justify">By studying some existing Extensions, I was very quickly able to understand how to write this Extension. My thanks go to the following:</p>
+
++ alemelis
++ altoiddealer
++ xhoxye
   
 # References
 
