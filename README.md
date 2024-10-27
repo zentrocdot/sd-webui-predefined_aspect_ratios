@@ -171,9 +171,9 @@ https://github.com/zentrocdot/sd-webui-predefined_aspect_ratios
 
 <p align="justify">By studying some existing Extensions, I was very quickly able to understand how to write this Extension. My thanks go to the following:</p>
 
-+ alemelis
-+ altoiddealer
-+ xhoxye
++ alemelis [3]
++ altoiddealer [4]
++ xhoxye [5]
   
 # References
 
