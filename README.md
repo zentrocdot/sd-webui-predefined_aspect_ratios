@@ -110,6 +110,8 @@ The installation link, which can be used in <i>AUTOMATIC1111</i> is as follows:
 https://github.com/zentrocdot/sd-webui-predefined_aspect_ratios
 ```
 
+Click on the overlapping squares on the right side of the last code block to copy the installation link.
+
 ## Known Problems
 
 <p align="justify">After installation of the Extension it could be that the web UI has to be reloaded from the browser that the Extension can be used. I haven't noticed this problem recently</p>
