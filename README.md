@@ -3,8 +3,6 @@
 
 <p align="justify">sd-webui-predefined_aspect_ratios is an <i>Extension</i> for the <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui">AUTOMATIC1111/stable-diffusion-webui</a>, which is adding buttons to the web UI for the selection of predefined <i>aspect ratios</i>.</p>
 
-Deprecated first extension -> I propose to use https://github.com/zentrocdot/sd-webui-aspect_ratios-dd instead.
-
 ---
 
 ## Preface
@@ -13,15 +11,15 @@ Deprecated first extension -> I propose to use https://github.com/zentrocdot/sd-
 
 ## User Case
 
-<p align="justify">The <i>Extension</i> was developed for use with SD 1.5. The assumptions subsequently presented are basses on my experiences with AUTOMATIC1111 and SD 1.5. As technology is constantly advancing, there is no guarantee that these assumptions will hold in the long term.</p>
+<p align="justify">The <i>Extension</i> was developed for use with <i>SD 1.5</i>. The assumptions subsequently presented are basses on my experiences with <i>AUTOMATIC1111</i> and <i>SD 1.5</i>. As technology is constantly advancing, there is no guarantee that these assumptions will hold in the long term.</p>
 
 ## Assumptions
 
-<p align="justify">There are one rule when creating AI images, which is crucial. A Ai generated immage should be as small as possible. But, the resolution for the image to be created should not be smaller than 512 pixel in one of the both possible directions. For the <i>Extension</i> one resolution is all the time 512 pixel. The quotient of the divison from the chosen aspect ratio may be a floating point number. Height or witdth my be rounded values.</p>
+<p align="justify">There are one rule when creating AI images, which is crucial. An Ai generated immage should be as small as possible. But, the resolution for the image to be created should not be smaller than 512 pixel in one of the both possible directions. For the <i>Extension</i> one resolution is all the time 512 pixel. The quotient of the divison from the chosen <i>aspect ratio</i> may be a floating point number. Height or witdth my be rounded values.</p>
 
 ## Selector Buttons for Predefined Aspect Ratios
 
-<p align="justify">Following aspect ratios are implemented:</p>
+<p align="justify">Following </i>aspect ratios<i> are implemented:</p>
 
 **No specific (square) Orientation**
 
@@ -45,15 +43,15 @@ Deprecated first extension -> I propose to use https://github.com/zentrocdot/sd-
 
 * 6:5 → 614 x 512 pixel → (Factor 1,19921875) 
 
-* 7:5 → 717 x 512 pixel → (Factor 1,400390625) 
+* 7:5 → 717 x 512 pixel → (Factor 1,400390625)
+
+* 8:3 → 1365 x 512 pixel → (Factor 2,666666667)
 
 * 14:9 → 796 x 512 pixel → (Factor 1,5546875) 
 
 * 15:9 → 853 x 512 pixel → (Factor 1,666015625) 
 
 * 16:9 → 910 x 512 pixel → (Factor 1,77734375)
-
-* 16:10 → 819 x 512 pixel → (Factor 1,599609375) 
 
 **Orientation Portrait**
 
@@ -67,7 +65,9 @@ Deprecated first extension -> I propose to use https://github.com/zentrocdot/sd-
 
 * 3:4 → 512 x 683 pixel → (Factor 0,749633968)
 
-* 3:5 → 512 x 853 pixel → (Factor 0,600234467) 
+* 3:5 → 512 x 853 pixel → (Factor 0,600234467)
+
+* 3:8 → 512 x 1365 pixel → (Factor 0,375)
 
 * 4:5 → 512 x 640 pixel → (Factor 0.8) 
 
@@ -81,8 +81,6 @@ Deprecated first extension -> I propose to use https://github.com/zentrocdot/sd-
 
 * 9:16 → 512 x 910 pixel → (Factor 0,562637363)
 
-* 10:16 → 512 x 819 pixel → (Factor 0,625152625)
-
 ## What the Extension Does
 
 After installation one will find a button panel within the web UI which looks like the next one.
@@ -91,7 +89,7 @@ After installation one will find a button panel within the web UI which looks li
 
 ## Known Problems
 
-After installation of the Extension it could be that the web UI has to be reloaded from the browser that the Extension can be used.
+<p align="justify">After installation of the Extension it could be that the web UI has to be reloaded from the browser that the Extension can be used. I haven't noticed this problem recently</p>
 
 ## Related Tools
 
@@ -101,7 +99,9 @@ After installation of the Extension it could be that the web UI has to be reload
 
 ## To-Do
 
-<p align="justify">The code of the <i>Extension</i> needs to be sanitized and optimised. The reason is simple, as I have used existing concepts and approaches.  </p>
+<p align="justify">The code of the <i>Extension</i> needs to be sanitized and optimised. The reason is simple, as I have used existing concepts and approaches.</p>
+
+<p align="justify">Since I am using my own extension more and more, a revision of the documentation is necessary.</p>
 
 ## Collection of Other Aspect Ratios
 
@@ -143,8 +143,8 @@ After installation of the Extension it could be that the web UI has to be reload
 * 36:10
 * 256:135
 
-The previous list does not claim to be complete.  
-
+The previous list does not claim to be complete. The list from Extension sd-webui-aspect_ratios-dd is more complete.
+  
 # References
 
 [1] https://github.com/AUTOMATIC1111/stable-diffusion-webui
