@@ -89,6 +89,7 @@
 After installation one will find a button panel within the web UI which looks like the next one.
 
 <a target="_blank" href=""><img src="./images/button_panel_new.png" alt="button panel"></a>
+<i>Figure 1: Exemplary appearance of the opened extension panel</i>
 
 ## Known Problems
 
