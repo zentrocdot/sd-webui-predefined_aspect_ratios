@@ -11,7 +11,6 @@
 
 <p align="justify">At times I was of the opinion that this <i>Extension</i> is not quite as helpful as I thought. I have since changed my mind and use it very often. My opinion was influenced by the <i>AUTOMATIC1111</i> contributors, who consider my extension to be too trivial and not helpful.</p>
 
-
 ## User Case
 
 <p align="justify">The <i>Extension</i> was developed for use with <i>SD 1.5</i>. The assumptions subsequently presented are basses on my experiences with <i>AUTOMATIC1111</i> and <i>SD 1.5</i>. As technology is constantly advancing, there is no guarantee that these assumptions will hold in the long term.</p>
@@ -89,6 +88,7 @@
 After installation one will find a button panel within the web UI which looks like the next one.
 
 <a target="_blank" href=""><img src="./images/button_panel_new.png" alt="button panel"></a>
+
 <i>Figure 1: Exemplary appearance of the opened extension panel</i>
 
 ## Known Problems
