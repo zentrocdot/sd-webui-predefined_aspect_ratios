@@ -29,12 +29,13 @@ _height = 512
 #                6/5, 7/5, 8/3, 12/5, 14/9, 16/9)
 _ar_labels_0 = ("2:1", "3:1", "3:2", "4:1", "4:3", "5:3", "5:4",
                 "6:5", "7:5", "8:3", "12:5", "14:9", "16:9")
+
 _ar_values_0 = ()
 for ele in _ar_labels_0:
     try:      
         templist = ele.split(":")
         fval = float(templist[0]) / float(templist[1])       
-       _ar_values_0.append(fval) 
+        _ar_values_0.append(fval)
     except:
         print("*** Could not parse: " + str(ele))  
 
