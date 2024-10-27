@@ -9,6 +9,9 @@
 
 <p align="justify">The existing solutions [3,4,5] were much to complex for my personal needs. I have therefore decided to use this case to programme an <i>Extension</i> for learning purposes. The result of my first efforts can be found here. The presented version does nothing else, than adding a panel with predefined aspect ratios to the web UI. The predefined <i>aspect ratios</i> cover the most common ones in use.</p>
 
+<p align="justify">At times I was of the opinion that this <i>Extension</i> is not quite as helpful as I thought. I have since changed my mind and use it very often. My opinion was influenced by the <i>AUTOMATIC1111</i> contributors, who consider my extension to be too trivial and not helpful.</p>
+
+
 ## User Case
 
 <p align="justify">The <i>Extension</i> was developed for use with <i>SD 1.5</i>. The assumptions subsequently presented are basses on my experiences with <i>AUTOMATIC1111</i> and <i>SD 1.5</i>. As technology is constantly advancing, there is no guarantee that these assumptions will hold in the long term.</p>
