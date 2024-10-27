@@ -21,7 +21,7 @@
 
 ## Selector Buttons for Predefined Aspect Ratios
 
-<p align="justify">Following </i>aspect ratios<i> are implemented:</p>
+<p align="justify">Following <i>aspect ratios</i> are implemented:</p>
 
 **No specific (square) Orientation**
 
