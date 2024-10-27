@@ -33,7 +33,9 @@ _ar_labels_0 = ("2:1", "3:1", "3:2", "4:1", "4:3", "5:3", "5:4",
 _ar_values_0 = ()
 for ele in _ar_labels_0:
     try:      
+        print(ele)
         templist = ele.split(":")
+        print(templist)
         fval = float(templist[0]) / float(templist[1])       
         _ar_values_0.append(fval)
     except:
